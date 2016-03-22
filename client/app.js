@@ -4,11 +4,14 @@ angular.module('kcoffey', [
     'ngRoute', 'ngMaterial', 'ngMessages',
     'kcoffey.blog'
 ])
-.config(['$routeProvider', '$locationProvider',
-function($routeProvider, $locationProvider) {
+.config(['$routeProvider', '$locationProvider', '$mdIconProvider',
+function($routeProvider, $locationProvider, $mdIconProvider) {
     // Default Route
     $routeProvider.otherwise({ redirectTo: '/blog' });
     $locationProvider.html5Mode(true);
+    
+    // Icons
+    $mdIconProvider.defaultIconSet('fonts/mdi.svg');
 }])
 .controller('AppCtrl', ['$scope', 
 function($scope) {
