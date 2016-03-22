@@ -2,7 +2,7 @@
 
 angular.module('kcoffey', [
     'ngRoute', 'ngMaterial', 'ngMessages',
-    'kcoffey.blog'
+    'kcoffey.blog', 'kcoffey.editor'
 ])
 .config(['$routeProvider', '$locationProvider', '$mdIconProvider',
 function($routeProvider, $locationProvider, $mdIconProvider) {
