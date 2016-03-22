@@ -1,0 +1,38 @@
+<md-content>
+    <div id="editorPage" layout="row" layout-align="start center">
+        <div flex="25" layout-fill hide-md hide-sm hide-xs></div>
+        <div id="editorForm" layout-fill>
+            <form name="editorForm">
+                <h2 class="md-title">New Post</h2>
+                <div class="form-content">
+                    <md-chips 
+                        ng-model="post.tags"
+                        placeholder="Enter tags"
+                        delete-button-label="Remove Tag"
+                        delete-hint="Press delete to remove tag"
+                        secondary-placeholder="+Tag">
+                    </md-chips>
+                    <md-input-container class="md-block">
+                        <label>Post Title</label>
+                        <input required type="text" name="postTitle" ng-model="post.title"/>
+                        <div ng-messages="editorForm.postTitle.$error" role="alert">
+                            <div ng-message-exp="['required']">
+                                Required
+                            </div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label>Content</label>
+                        <textarea rows="40" required type="text" name="postContent" md-maxlength="1000" ng-model="post.content"></textarea>
+                        <div ng-messages="editorForm.postContent.$error" role="alert">
+                            <div ng-message-exp="['required']">
+                                Required
+                            </div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </form>
+        </div>
+        <div flex="25" layout-fill hide-md hide-sm hide-xs></div>
+    </div>
+</md-content>

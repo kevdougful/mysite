@@ -10,5 +10,7 @@ angular.module('kcoffey.editor', ['ngRoute'])
 // Submit view controller
 .controller('EditorCtrl', ['$scope',
 function($scope) {
-    $scope.tags;
+    $scope.post = {
+        tags: []
+    };
 }]);
