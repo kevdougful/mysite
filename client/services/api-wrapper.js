@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('kcoffey.api')
+angular.module('kcoffey.api', [])
 .factory('API', ['$q', 'ApiService',
 function($q, ApiService) {
     
