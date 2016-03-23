@@ -8,12 +8,16 @@ angular.module('kcoffey.editor', ['ngRoute'])
     });
 }])
 // Submit view controller
-.controller('EditorCtrl', ['$scope', 'Dialog', 'API', 'Post', 'Tag', 'PostTag',
-function($scope, Dialog, API, Post, Tag, PostTag) {
+.controller('EditorCtrl', ['$scope', '$mdConstant', 'Dialog', 'API', 'Post', 'Tag', 'PostTag',
+function($scope, $mdConstant, Dialog, API, Post, Tag, PostTag) {
     $scope.post = {};
     $scope.tags = [];
     $scope.createPost = createPost;
-    
+    $scope.separatorKeys = [
+        $mdConstant.KEY_CODE.ENTER,
+        $mdConstant.KEY_CODE.COMMA
+    ];
+        
     function createPost(post, tags) {
         var tagObjs = [];
         for (var tag = 0; tag < tags.length; tag++) {
