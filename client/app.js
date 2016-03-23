@@ -2,13 +2,23 @@
 
 angular.module('kcoffey', [
     'ngRoute', 'ngMaterial', 'ngMessages',
-    'kcoffey.blog', 'kcoffey.editor'
+    'kcoffey.blog', 'kcoffey.editor',
+    'ApiService'
 ])
-.config(['$routeProvider', '$locationProvider', '$mdIconProvider',
-function($routeProvider, $locationProvider, $mdIconProvider) {
+.config([
+    '$routeProvider', '$locationProvider', '$mdIconProvider',
+    'LoopBackResourceProvider',
+function(
+    $routeProvider, $locationProvider, $mdIconProvider,
+    LoopBackResourceProvider) {
+
     // Default Route
     $routeProvider.otherwise({ redirectTo: '/blog' });
     $locationProvider.html5Mode(true);
+    
+    // Loopback AngularJS SDK
+    LoopBackResourceProvider.setAuthHeader('X-Access-Token');
+    LoopBackResourceProvider.setUrlBase('http://127.0.0.1/api');
     
     // Icons
     $mdIconProvider.defaultIconSet('fonts/mdi.svg');
