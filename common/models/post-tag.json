@@ -9,16 +9,16 @@
   "properties": {},
   "validations": [],
   "relations": {
-      "post": {
-          "type": "belongsTo",
-          "model": "Post",
-          "foreignKey": "postId"
-      },
-      "tag": {
-          "type": "belongsTo",
-          "model": "Tag",
-          "foreignKey": "tagId"
-      }
+    "post": {
+      "type": "belongsTo",
+      "model": "Post",
+      "foreignKey": "postId"
+    },
+    "tag": {
+      "type": "belongsTo",
+      "model": "Tag",
+      "foreignKey": "tagId"
+    }
   },
   "acls": [],
   "methods": {}

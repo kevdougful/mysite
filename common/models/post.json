@@ -11,6 +11,9 @@
       "type": "string",
       "required": true
     },
+    "subtitle": {
+      "type": "string"
+    },
     "content": {
       "type": "string",
       "required": true
@@ -23,6 +26,11 @@
       "model": "Tag",
       "foreignKey": "postId",
       "through": "PostTag"
+    },
+    "category": {
+      "type": "belongsTo",
+      "model": "Category",
+      "foreignKey": ""
     }
   },
   "acls": [],
