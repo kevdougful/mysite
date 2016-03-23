@@ -47,5 +47,9 @@
   "Category": {
     "dataSource": "db",
     "public": true
+  },
+  "PostImages": {
+    "dataSource": "s3",
+    "public": true
   }
 }
