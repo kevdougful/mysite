@@ -8,11 +8,10 @@ angular.module('kcoffey.editor', ['ngRoute'])
     });
 }])
 // Submit view controller
-.controller('EditorCtrl', ['$scope', 'API', 'Post', 'Tag', 'PostTag',
-function($scope, API, Post, Tag, PostTag) {
+.controller('EditorCtrl', ['$scope', 'Dialog', 'API', 'Post', 'Tag', 'PostTag',
+function($scope, Dialog, API, Post, Tag, PostTag) {
     $scope.post = {};
     $scope.tags = [];
-    $scope.createTag = createTag;
     $scope.createPost = createPost;
     
     function createPost(post, tags) {
@@ -35,19 +34,12 @@ function($scope, API, Post, Tag, PostTag) {
                 }
                 return API.fetchOrCreateArray(PostTag, postTags);
             })
+            .then(function(newPostTags) {
+                Dialog.notify('Post published', 3000);
+            })
             .catch(function(err) {
-                console.log(err);
+                Dialog.notify('Error!', 3000);
             });
     }
     
-    function createTag(name) {
-        
-        API.fetchOrCreate(Tag, { name: name })
-            .then(function(tag) {
-                console.log(tag);
-            })
-            .catch(function(err) {
-                console.log(err);
-            });
-    }
 }]);

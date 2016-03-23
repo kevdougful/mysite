@@ -1,9 +1,12 @@
 'use strict';
 
 angular.module('kcoffey', [
+    // Angular Dependencies
     'ngRoute', 'ngMaterial', 'ngMessages',
-    'kcoffey.blog', 'kcoffey.editor', 
-    'ApiService', 'kcoffey.api'
+    // Services
+    'kcoffey.ui', 'ApiService', 'kcoffey.api',
+    // Views 
+    'kcoffey.blog', 'kcoffey.editor'
 ])
 .config([
     '$routeProvider', '$locationProvider', '$mdIconProvider',
