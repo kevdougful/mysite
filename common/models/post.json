@@ -1,6 +1,6 @@
 {
-  "name": "post",
-  "plural": "posts",
+  "name": "Post",
+  "plural": "Posts",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -18,10 +18,12 @@
   },
   "validations": [],
   "relations": {
-      "tags": {
-          "type": "hasAndBelongsToMany",
-          "model": "tag"
-      }
+    "tags": {
+      "type": "hasMany",
+      "model": "Tag",
+      "foreignKey": "postId",
+      "through": "PostTag"
+    }
   },
   "acls": [],
   "methods": {}

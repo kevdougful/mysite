@@ -1,23 +1,32 @@
 {
-  "name": "tag",
-  "plural": "tags",
+  "name": "Tag",
+  "plural": "Tags",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
+    "id": {
+      "type": "number",
+      "id": true,
+      "generated": true
+    },
     "name": {
       "type": "string",
-      "required": true
+      "id": true,
+      "required": true,
+      "length": 25
     }
   },
   "validations": [],
   "relations": {
-      "posts": {
-          "type": "hasAndBelongsToMany",
-          "model": "post"
-      }
+    "posts": {
+      "type": "hasMany",
+      "model": "Post",
+      "foreignKey": "tagId",
+      "through": "PostTag"
+    }
   },
   "acls": [],
   "methods": {}

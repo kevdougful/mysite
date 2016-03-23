@@ -32,11 +32,15 @@
     "dataSource": "db",
     "public": false
   },
-  "post": {
+  "Post": {
     "dataSource": "db",
     "public": true
   },
-  "tag": {
+  "Tag": {
+    "dataSource": "db",
+    "public": true
+  },
+  "PostTag": {
     "dataSource": "db",
     "public": true
   }

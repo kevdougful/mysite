@@ -2,11 +2,11 @@
     <div id="editorPage" layout="row" layout-align="start center">
         <div flex="25" layout-fill hide-md hide-sm hide-xs></div>
         <div id="editorForm" layout-fill>
-            <form name="editorForm">
+            <form name="editorForm" ng-submit="createPost(post, tags)" novalidate>
                 <h2 class="md-title">New Post</h2>
                 <div class="form-content">
                     <md-chips 
-                        ng-model="post.tags"
+                        ng-model="tags"
                         placeholder="Enter tags"
                         delete-button-label="Remove Tag"
                         delete-hint="Press delete to remove tag"
@@ -30,6 +30,18 @@
                             </div>
                         </div>
                     </md-input-container>
+                    <md-button type="button" class="md-icon-button" aria-label="Save">
+                        <md-tooltip md-direction="bottom">
+                            Save
+                        </md-tooltip>
+                        <md-icon md-svg-icon="content-save"></md-icon>
+                    </md-button>
+                    <md-button type="submit" ng-disabled="editorForm.$invalid" class="md-icon-button md-primary" aria-label="Publish">
+                        <md-tooltip md-direction="bottom">
+                            Publish
+                        </md-tooltip>
+                        <md-icon md-svg-icon="file-send"></md-icon>
+                    </md-button>
                 </div>
             </form>
         </div>

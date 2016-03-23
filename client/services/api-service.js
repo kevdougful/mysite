@@ -1134,7 +1134,7 @@ module.factory(
   "Post",
   ['LoopBackResource', 'LoopBackAuth', '$injector', function(Resource, LoopBackAuth, $injector) {
     var R = Resource(
-      urlBase + "/posts/:id",
+      urlBase + "/Posts/:id",
       { 'id': '@id' },
       {
 
@@ -1143,7 +1143,7 @@ module.factory(
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/posts/:id/tags/:fk",
+          url: urlBase + "/Posts/:id/tags/:fk",
           method: "GET"
         },
 
@@ -1152,7 +1152,7 @@ module.factory(
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/posts/:id/tags/:fk",
+          url: urlBase + "/Posts/:id/tags/:fk",
           method: "DELETE"
         },
 
@@ -1161,7 +1161,7 @@ module.factory(
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/posts/:id/tags/:fk",
+          url: urlBase + "/Posts/:id/tags/:fk",
           method: "PUT"
         },
 
@@ -1170,7 +1170,7 @@ module.factory(
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/posts/:id/tags/rel/:fk",
+          url: urlBase + "/Posts/:id/tags/rel/:fk",
           method: "PUT"
         },
 
@@ -1179,7 +1179,7 @@ module.factory(
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/posts/:id/tags/rel/:fk",
+          url: urlBase + "/Posts/:id/tags/rel/:fk",
           method: "DELETE"
         },
 
@@ -1188,32 +1188,32 @@ module.factory(
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/posts/:id/tags/rel/:fk",
+          url: urlBase + "/Posts/:id/tags/rel/:fk",
           method: "HEAD"
         },
 
         // INTERNAL. Use Post.tags() instead.
         "prototype$__get__tags": {
           isArray: true,
-          url: urlBase + "/posts/:id/tags",
+          url: urlBase + "/Posts/:id/tags",
           method: "GET"
         },
 
         // INTERNAL. Use Post.tags.create() instead.
         "prototype$__create__tags": {
-          url: urlBase + "/posts/:id/tags",
+          url: urlBase + "/Posts/:id/tags",
           method: "POST"
         },
 
         // INTERNAL. Use Post.tags.destroyAll() instead.
         "prototype$__delete__tags": {
-          url: urlBase + "/posts/:id/tags",
+          url: urlBase + "/Posts/:id/tags",
           method: "DELETE"
         },
 
         // INTERNAL. Use Post.tags.count() instead.
         "prototype$__count__tags": {
-          url: urlBase + "/posts/:id/tags/count",
+          url: urlBase + "/Posts/:id/tags/count",
           method: "GET"
         },
 
@@ -1251,7 +1251,7 @@ module.factory(
          * </em>
          */
         "create": {
-          url: urlBase + "/posts",
+          url: urlBase + "/Posts",
           method: "POST"
         },
 
@@ -1290,7 +1290,7 @@ module.factory(
          */
         "createMany": {
           isArray: true,
-          url: urlBase + "/posts",
+          url: urlBase + "/Posts",
           method: "POST"
         },
 
@@ -1328,7 +1328,7 @@ module.factory(
          * </em>
          */
         "upsert": {
-          url: urlBase + "/posts",
+          url: urlBase + "/Posts",
           method: "PUT"
         },
 
@@ -1360,7 +1360,7 @@ module.factory(
          *  - `exists` – `{boolean=}` - 
          */
         "exists": {
-          url: urlBase + "/posts/:id/exists",
+          url: urlBase + "/Posts/:id/exists",
           method: "GET"
         },
 
@@ -1395,7 +1395,7 @@ module.factory(
          * </em>
          */
         "findById": {
-          url: urlBase + "/posts/:id",
+          url: urlBase + "/Posts/:id",
           method: "GET"
         },
 
@@ -1429,7 +1429,7 @@ module.factory(
          */
         "find": {
           isArray: true,
-          url: urlBase + "/posts",
+          url: urlBase + "/Posts",
           method: "GET"
         },
 
@@ -1462,7 +1462,7 @@ module.factory(
          * </em>
          */
         "findOne": {
-          url: urlBase + "/posts/findOne",
+          url: urlBase + "/Posts/findOne",
           method: "GET"
         },
 
@@ -1496,7 +1496,7 @@ module.factory(
          * The number of instances updated
          */
         "updateAll": {
-          url: urlBase + "/posts/update",
+          url: urlBase + "/Posts/update",
           method: "POST"
         },
 
@@ -1529,7 +1529,7 @@ module.factory(
          * </em>
          */
         "deleteById": {
-          url: urlBase + "/posts/:id",
+          url: urlBase + "/Posts/:id",
           method: "DELETE"
         },
 
@@ -1561,7 +1561,7 @@ module.factory(
          *  - `count` – `{number=}` - 
          */
         "count": {
-          url: urlBase + "/posts/count",
+          url: urlBase + "/Posts/count",
           method: "GET"
         },
 
@@ -1598,7 +1598,7 @@ module.factory(
          * </em>
          */
         "prototype$updateAttributes": {
-          url: urlBase + "/posts/:id",
+          url: urlBase + "/Posts/:id",
           method: "PUT"
         },
 
@@ -1635,93 +1635,99 @@ module.factory(
          *  - `changes` – `{ReadableStream=}` - 
          */
         "createChangeStream": {
-          url: urlBase + "/posts/change-stream",
+          url: urlBase + "/Posts/change-stream",
           method: "POST"
         },
 
         // INTERNAL. Use Tag.posts.findById() instead.
-        "::findById::tag::posts": {
+        "::findById::Tag::posts": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/tags/:id/posts/:fk",
+          url: urlBase + "/Tags/:id/posts/:fk",
           method: "GET"
         },
 
         // INTERNAL. Use Tag.posts.destroyById() instead.
-        "::destroyById::tag::posts": {
+        "::destroyById::Tag::posts": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/tags/:id/posts/:fk",
+          url: urlBase + "/Tags/:id/posts/:fk",
           method: "DELETE"
         },
 
         // INTERNAL. Use Tag.posts.updateById() instead.
-        "::updateById::tag::posts": {
+        "::updateById::Tag::posts": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/tags/:id/posts/:fk",
+          url: urlBase + "/Tags/:id/posts/:fk",
           method: "PUT"
         },
 
         // INTERNAL. Use Tag.posts.link() instead.
-        "::link::tag::posts": {
+        "::link::Tag::posts": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/tags/:id/posts/rel/:fk",
+          url: urlBase + "/Tags/:id/posts/rel/:fk",
           method: "PUT"
         },
 
         // INTERNAL. Use Tag.posts.unlink() instead.
-        "::unlink::tag::posts": {
+        "::unlink::Tag::posts": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/tags/:id/posts/rel/:fk",
+          url: urlBase + "/Tags/:id/posts/rel/:fk",
           method: "DELETE"
         },
 
         // INTERNAL. Use Tag.posts.exists() instead.
-        "::exists::tag::posts": {
+        "::exists::Tag::posts": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/tags/:id/posts/rel/:fk",
+          url: urlBase + "/Tags/:id/posts/rel/:fk",
           method: "HEAD"
         },
 
         // INTERNAL. Use Tag.posts() instead.
-        "::get::tag::posts": {
+        "::get::Tag::posts": {
           isArray: true,
-          url: urlBase + "/tags/:id/posts",
+          url: urlBase + "/Tags/:id/posts",
           method: "GET"
         },
 
         // INTERNAL. Use Tag.posts.create() instead.
-        "::create::tag::posts": {
-          url: urlBase + "/tags/:id/posts",
+        "::create::Tag::posts": {
+          url: urlBase + "/Tags/:id/posts",
           method: "POST"
         },
 
         // INTERNAL. Use Tag.posts.createMany() instead.
-        "::createMany::tag::posts": {
+        "::createMany::Tag::posts": {
           isArray: true,
-          url: urlBase + "/tags/:id/posts",
+          url: urlBase + "/Tags/:id/posts",
           method: "POST"
         },
 
         // INTERNAL. Use Tag.posts.destroyAll() instead.
-        "::delete::tag::posts": {
-          url: urlBase + "/tags/:id/posts",
+        "::delete::Tag::posts": {
+          url: urlBase + "/Tags/:id/posts",
           method: "DELETE"
         },
 
         // INTERNAL. Use Tag.posts.count() instead.
-        "::count::tag::posts": {
-          url: urlBase + "/tags/:id/posts/count",
+        "::count::Tag::posts": {
+          url: urlBase + "/Tags/:id/posts/count",
+          method: "GET"
+        },
+
+        // INTERNAL. Use PostTag.post() instead.
+        "::get::PostTag::post": {
+          url: urlBase + "/PostTags/:id/post",
           method: "GET"
         },
       }
@@ -1888,7 +1894,7 @@ module.factory(
          *
          * @description
          *
-         * Queries tags of post.
+         * Queries tags of Post.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -1913,7 +1919,7 @@ module.factory(
          */
         R.tags = function() {
           var TargetResource = $injector.get("Tag");
-          var action = TargetResource["::get::post::tags"];
+          var action = TargetResource["::get::Post::tags"];
           return action.apply(R, arguments);
         };
 
@@ -1924,7 +1930,7 @@ module.factory(
          *
          * @description
          *
-         * Counts tags of post.
+         * Counts tags of Post.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -1948,7 +1954,7 @@ module.factory(
          */
         R.tags.count = function() {
           var TargetResource = $injector.get("Tag");
-          var action = TargetResource["::count::post::tags"];
+          var action = TargetResource["::count::Post::tags"];
           return action.apply(R, arguments);
         };
 
@@ -1986,7 +1992,7 @@ module.factory(
          */
         R.tags.create = function() {
           var TargetResource = $injector.get("Tag");
-          var action = TargetResource["::create::post::tags"];
+          var action = TargetResource["::create::Post::tags"];
           return action.apply(R, arguments);
         };
 
@@ -2024,7 +2030,7 @@ module.factory(
          */
         R.tags.createMany = function() {
           var TargetResource = $injector.get("Tag");
-          var action = TargetResource["::createMany::post::tags"];
+          var action = TargetResource["::createMany::Post::tags"];
           return action.apply(R, arguments);
         };
 
@@ -2055,7 +2061,7 @@ module.factory(
          */
         R.tags.destroyAll = function() {
           var TargetResource = $injector.get("Tag");
-          var action = TargetResource["::delete::post::tags"];
+          var action = TargetResource["::delete::Post::tags"];
           return action.apply(R, arguments);
         };
 
@@ -2088,7 +2094,7 @@ module.factory(
          */
         R.tags.destroyById = function() {
           var TargetResource = $injector.get("Tag");
-          var action = TargetResource["::destroyById::post::tags"];
+          var action = TargetResource["::destroyById::Post::tags"];
           return action.apply(R, arguments);
         };
 
@@ -2124,7 +2130,7 @@ module.factory(
          */
         R.tags.exists = function() {
           var TargetResource = $injector.get("Tag");
-          var action = TargetResource["::exists::post::tags"];
+          var action = TargetResource["::exists::Post::tags"];
           return action.apply(R, arguments);
         };
 
@@ -2160,7 +2166,7 @@ module.factory(
          */
         R.tags.findById = function() {
           var TargetResource = $injector.get("Tag");
-          var action = TargetResource["::findById::post::tags"];
+          var action = TargetResource["::findById::Post::tags"];
           return action.apply(R, arguments);
         };
 
@@ -2200,7 +2206,7 @@ module.factory(
          */
         R.tags.link = function() {
           var TargetResource = $injector.get("Tag");
-          var action = TargetResource["::link::post::tags"];
+          var action = TargetResource["::link::Post::tags"];
           return action.apply(R, arguments);
         };
 
@@ -2233,7 +2239,7 @@ module.factory(
          */
         R.tags.unlink = function() {
           var TargetResource = $injector.get("Tag");
-          var action = TargetResource["::unlink::post::tags"];
+          var action = TargetResource["::unlink::Post::tags"];
           return action.apply(R, arguments);
         };
 
@@ -2273,7 +2279,7 @@ module.factory(
          */
         R.tags.updateById = function() {
           var TargetResource = $injector.get("Tag");
-          var action = TargetResource["::updateById::post::tags"];
+          var action = TargetResource["::updateById::Post::tags"];
           return action.apply(R, arguments);
         };
 
@@ -2301,7 +2307,7 @@ module.factory(
   "Tag",
   ['LoopBackResource', 'LoopBackAuth', '$injector', function(Resource, LoopBackAuth, $injector) {
     var R = Resource(
-      urlBase + "/tags/:id",
+      urlBase + "/Tags/:id",
       { 'id': '@id' },
       {
 
@@ -2310,7 +2316,7 @@ module.factory(
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/tags/:id/posts/:fk",
+          url: urlBase + "/Tags/:id/posts/:fk",
           method: "GET"
         },
 
@@ -2319,7 +2325,7 @@ module.factory(
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/tags/:id/posts/:fk",
+          url: urlBase + "/Tags/:id/posts/:fk",
           method: "DELETE"
         },
 
@@ -2328,7 +2334,7 @@ module.factory(
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/tags/:id/posts/:fk",
+          url: urlBase + "/Tags/:id/posts/:fk",
           method: "PUT"
         },
 
@@ -2337,7 +2343,7 @@ module.factory(
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/tags/:id/posts/rel/:fk",
+          url: urlBase + "/Tags/:id/posts/rel/:fk",
           method: "PUT"
         },
 
@@ -2346,7 +2352,7 @@ module.factory(
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/tags/:id/posts/rel/:fk",
+          url: urlBase + "/Tags/:id/posts/rel/:fk",
           method: "DELETE"
         },
 
@@ -2355,32 +2361,32 @@ module.factory(
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/tags/:id/posts/rel/:fk",
+          url: urlBase + "/Tags/:id/posts/rel/:fk",
           method: "HEAD"
         },
 
         // INTERNAL. Use Tag.posts() instead.
         "prototype$__get__posts": {
           isArray: true,
-          url: urlBase + "/tags/:id/posts",
+          url: urlBase + "/Tags/:id/posts",
           method: "GET"
         },
 
         // INTERNAL. Use Tag.posts.create() instead.
         "prototype$__create__posts": {
-          url: urlBase + "/tags/:id/posts",
+          url: urlBase + "/Tags/:id/posts",
           method: "POST"
         },
 
         // INTERNAL. Use Tag.posts.destroyAll() instead.
         "prototype$__delete__posts": {
-          url: urlBase + "/tags/:id/posts",
+          url: urlBase + "/Tags/:id/posts",
           method: "DELETE"
         },
 
         // INTERNAL. Use Tag.posts.count() instead.
         "prototype$__count__posts": {
-          url: urlBase + "/tags/:id/posts/count",
+          url: urlBase + "/Tags/:id/posts/count",
           method: "GET"
         },
 
@@ -2418,7 +2424,7 @@ module.factory(
          * </em>
          */
         "create": {
-          url: urlBase + "/tags",
+          url: urlBase + "/Tags",
           method: "POST"
         },
 
@@ -2457,7 +2463,7 @@ module.factory(
          */
         "createMany": {
           isArray: true,
-          url: urlBase + "/tags",
+          url: urlBase + "/Tags",
           method: "POST"
         },
 
@@ -2495,7 +2501,7 @@ module.factory(
          * </em>
          */
         "upsert": {
-          url: urlBase + "/tags",
+          url: urlBase + "/Tags",
           method: "PUT"
         },
 
@@ -2527,7 +2533,7 @@ module.factory(
          *  - `exists` – `{boolean=}` - 
          */
         "exists": {
-          url: urlBase + "/tags/:id/exists",
+          url: urlBase + "/Tags/:id/exists",
           method: "GET"
         },
 
@@ -2562,7 +2568,7 @@ module.factory(
          * </em>
          */
         "findById": {
-          url: urlBase + "/tags/:id",
+          url: urlBase + "/Tags/:id",
           method: "GET"
         },
 
@@ -2596,7 +2602,7 @@ module.factory(
          */
         "find": {
           isArray: true,
-          url: urlBase + "/tags",
+          url: urlBase + "/Tags",
           method: "GET"
         },
 
@@ -2629,7 +2635,7 @@ module.factory(
          * </em>
          */
         "findOne": {
-          url: urlBase + "/tags/findOne",
+          url: urlBase + "/Tags/findOne",
           method: "GET"
         },
 
@@ -2663,7 +2669,7 @@ module.factory(
          * The number of instances updated
          */
         "updateAll": {
-          url: urlBase + "/tags/update",
+          url: urlBase + "/Tags/update",
           method: "POST"
         },
 
@@ -2696,7 +2702,7 @@ module.factory(
          * </em>
          */
         "deleteById": {
-          url: urlBase + "/tags/:id",
+          url: urlBase + "/Tags/:id",
           method: "DELETE"
         },
 
@@ -2728,7 +2734,7 @@ module.factory(
          *  - `count` – `{number=}` - 
          */
         "count": {
-          url: urlBase + "/tags/count",
+          url: urlBase + "/Tags/count",
           method: "GET"
         },
 
@@ -2765,7 +2771,7 @@ module.factory(
          * </em>
          */
         "prototype$updateAttributes": {
-          url: urlBase + "/tags/:id",
+          url: urlBase + "/Tags/:id",
           method: "PUT"
         },
 
@@ -2802,93 +2808,99 @@ module.factory(
          *  - `changes` – `{ReadableStream=}` - 
          */
         "createChangeStream": {
-          url: urlBase + "/tags/change-stream",
+          url: urlBase + "/Tags/change-stream",
           method: "POST"
         },
 
         // INTERNAL. Use Post.tags.findById() instead.
-        "::findById::post::tags": {
+        "::findById::Post::tags": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/posts/:id/tags/:fk",
+          url: urlBase + "/Posts/:id/tags/:fk",
           method: "GET"
         },
 
         // INTERNAL. Use Post.tags.destroyById() instead.
-        "::destroyById::post::tags": {
+        "::destroyById::Post::tags": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/posts/:id/tags/:fk",
+          url: urlBase + "/Posts/:id/tags/:fk",
           method: "DELETE"
         },
 
         // INTERNAL. Use Post.tags.updateById() instead.
-        "::updateById::post::tags": {
+        "::updateById::Post::tags": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/posts/:id/tags/:fk",
+          url: urlBase + "/Posts/:id/tags/:fk",
           method: "PUT"
         },
 
         // INTERNAL. Use Post.tags.link() instead.
-        "::link::post::tags": {
+        "::link::Post::tags": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/posts/:id/tags/rel/:fk",
+          url: urlBase + "/Posts/:id/tags/rel/:fk",
           method: "PUT"
         },
 
         // INTERNAL. Use Post.tags.unlink() instead.
-        "::unlink::post::tags": {
+        "::unlink::Post::tags": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/posts/:id/tags/rel/:fk",
+          url: urlBase + "/Posts/:id/tags/rel/:fk",
           method: "DELETE"
         },
 
         // INTERNAL. Use Post.tags.exists() instead.
-        "::exists::post::tags": {
+        "::exists::Post::tags": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/posts/:id/tags/rel/:fk",
+          url: urlBase + "/Posts/:id/tags/rel/:fk",
           method: "HEAD"
         },
 
         // INTERNAL. Use Post.tags() instead.
-        "::get::post::tags": {
+        "::get::Post::tags": {
           isArray: true,
-          url: urlBase + "/posts/:id/tags",
+          url: urlBase + "/Posts/:id/tags",
           method: "GET"
         },
 
         // INTERNAL. Use Post.tags.create() instead.
-        "::create::post::tags": {
-          url: urlBase + "/posts/:id/tags",
+        "::create::Post::tags": {
+          url: urlBase + "/Posts/:id/tags",
           method: "POST"
         },
 
         // INTERNAL. Use Post.tags.createMany() instead.
-        "::createMany::post::tags": {
+        "::createMany::Post::tags": {
           isArray: true,
-          url: urlBase + "/posts/:id/tags",
+          url: urlBase + "/Posts/:id/tags",
           method: "POST"
         },
 
         // INTERNAL. Use Post.tags.destroyAll() instead.
-        "::delete::post::tags": {
-          url: urlBase + "/posts/:id/tags",
+        "::delete::Post::tags": {
+          url: urlBase + "/Posts/:id/tags",
           method: "DELETE"
         },
 
         // INTERNAL. Use Post.tags.count() instead.
-        "::count::post::tags": {
-          url: urlBase + "/posts/:id/tags/count",
+        "::count::Post::tags": {
+          url: urlBase + "/Posts/:id/tags/count",
+          method: "GET"
+        },
+
+        // INTERNAL. Use PostTag.tag() instead.
+        "::get::PostTag::tag": {
+          url: urlBase + "/PostTags/:id/tag",
           method: "GET"
         },
       }
@@ -3055,7 +3067,7 @@ module.factory(
          *
          * @description
          *
-         * Queries posts of tag.
+         * Queries posts of Tag.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -3080,7 +3092,7 @@ module.factory(
          */
         R.posts = function() {
           var TargetResource = $injector.get("Post");
-          var action = TargetResource["::get::tag::posts"];
+          var action = TargetResource["::get::Tag::posts"];
           return action.apply(R, arguments);
         };
 
@@ -3091,7 +3103,7 @@ module.factory(
          *
          * @description
          *
-         * Counts posts of tag.
+         * Counts posts of Tag.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -3115,7 +3127,7 @@ module.factory(
          */
         R.posts.count = function() {
           var TargetResource = $injector.get("Post");
-          var action = TargetResource["::count::tag::posts"];
+          var action = TargetResource["::count::Tag::posts"];
           return action.apply(R, arguments);
         };
 
@@ -3153,7 +3165,7 @@ module.factory(
          */
         R.posts.create = function() {
           var TargetResource = $injector.get("Post");
-          var action = TargetResource["::create::tag::posts"];
+          var action = TargetResource["::create::Tag::posts"];
           return action.apply(R, arguments);
         };
 
@@ -3191,7 +3203,7 @@ module.factory(
          */
         R.posts.createMany = function() {
           var TargetResource = $injector.get("Post");
-          var action = TargetResource["::createMany::tag::posts"];
+          var action = TargetResource["::createMany::Tag::posts"];
           return action.apply(R, arguments);
         };
 
@@ -3222,7 +3234,7 @@ module.factory(
          */
         R.posts.destroyAll = function() {
           var TargetResource = $injector.get("Post");
-          var action = TargetResource["::delete::tag::posts"];
+          var action = TargetResource["::delete::Tag::posts"];
           return action.apply(R, arguments);
         };
 
@@ -3255,7 +3267,7 @@ module.factory(
          */
         R.posts.destroyById = function() {
           var TargetResource = $injector.get("Post");
-          var action = TargetResource["::destroyById::tag::posts"];
+          var action = TargetResource["::destroyById::Tag::posts"];
           return action.apply(R, arguments);
         };
 
@@ -3291,7 +3303,7 @@ module.factory(
          */
         R.posts.exists = function() {
           var TargetResource = $injector.get("Post");
-          var action = TargetResource["::exists::tag::posts"];
+          var action = TargetResource["::exists::Tag::posts"];
           return action.apply(R, arguments);
         };
 
@@ -3327,7 +3339,7 @@ module.factory(
          */
         R.posts.findById = function() {
           var TargetResource = $injector.get("Post");
-          var action = TargetResource["::findById::tag::posts"];
+          var action = TargetResource["::findById::Tag::posts"];
           return action.apply(R, arguments);
         };
 
@@ -3367,7 +3379,7 @@ module.factory(
          */
         R.posts.link = function() {
           var TargetResource = $injector.get("Post");
-          var action = TargetResource["::link::tag::posts"];
+          var action = TargetResource["::link::Tag::posts"];
           return action.apply(R, arguments);
         };
 
@@ -3400,7 +3412,7 @@ module.factory(
          */
         R.posts.unlink = function() {
           var TargetResource = $injector.get("Post");
-          var action = TargetResource["::unlink::tag::posts"];
+          var action = TargetResource["::unlink::Tag::posts"];
           return action.apply(R, arguments);
         };
 
@@ -3440,7 +3452,683 @@ module.factory(
          */
         R.posts.updateById = function() {
           var TargetResource = $injector.get("Post");
-          var action = TargetResource["::updateById::tag::posts"];
+          var action = TargetResource["::updateById::Tag::posts"];
+          return action.apply(R, arguments);
+        };
+
+    return R;
+  }]);
+
+/**
+ * @ngdoc object
+ * @name ApiService.PostTag
+ * @header ApiService.PostTag
+ * @object
+ *
+ * @description
+ *
+ * A $resource object for interacting with the `PostTag` model.
+ *
+ * ## Example
+ *
+ * See
+ * {@link http://docs.angularjs.org/api/ngResource.$resource#example $resource}
+ * for an example of using this object.
+ *
+ */
+module.factory(
+  "PostTag",
+  ['LoopBackResource', 'LoopBackAuth', '$injector', function(Resource, LoopBackAuth, $injector) {
+    var R = Resource(
+      urlBase + "/PostTags/:id",
+      { 'id': '@id' },
+      {
+
+        // INTERNAL. Use PostTag.post() instead.
+        "prototype$__get__post": {
+          url: urlBase + "/PostTags/:id/post",
+          method: "GET"
+        },
+
+        // INTERNAL. Use PostTag.tag() instead.
+        "prototype$__get__tag": {
+          url: urlBase + "/PostTags/:id/tag",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name ApiService.PostTag#create
+         * @methodOf ApiService.PostTag
+         *
+         * @description
+         *
+         * Create a new instance of the model and persist it into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `PostTag` object.)
+         * </em>
+         */
+        "create": {
+          url: urlBase + "/PostTags",
+          method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name ApiService.PostTag#createMany
+         * @methodOf ApiService.PostTag
+         *
+         * @description
+         *
+         * Create a new instance of the model and persist it into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `PostTag` object.)
+         * </em>
+         */
+        "createMany": {
+          isArray: true,
+          url: urlBase + "/PostTags",
+          method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name ApiService.PostTag#upsert
+         * @methodOf ApiService.PostTag
+         *
+         * @description
+         *
+         * Update an existing model instance or insert a new one into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `PostTag` object.)
+         * </em>
+         */
+        "upsert": {
+          url: urlBase + "/PostTags",
+          method: "PUT"
+        },
+
+        /**
+         * @ngdoc method
+         * @name ApiService.PostTag#exists
+         * @methodOf ApiService.PostTag
+         *
+         * @description
+         *
+         * Check whether a model instance exists in the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `exists` – `{boolean=}` - 
+         */
+        "exists": {
+          url: urlBase + "/PostTags/:id/exists",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name ApiService.PostTag#findById
+         * @methodOf ApiService.PostTag
+         *
+         * @description
+         *
+         * Find a model instance by id from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         *  - `filter` – `{object=}` - Filter defining fields and include
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `PostTag` object.)
+         * </em>
+         */
+        "findById": {
+          url: urlBase + "/PostTags/:id",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name ApiService.PostTag#find
+         * @methodOf ApiService.PostTag
+         *
+         * @description
+         *
+         * Find all instances of the model matched by filter from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `PostTag` object.)
+         * </em>
+         */
+        "find": {
+          isArray: true,
+          url: urlBase + "/PostTags",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name ApiService.PostTag#findOne
+         * @methodOf ApiService.PostTag
+         *
+         * @description
+         *
+         * Find first instance of the model matched by filter from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `PostTag` object.)
+         * </em>
+         */
+        "findOne": {
+          url: urlBase + "/PostTags/findOne",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name ApiService.PostTag#updateAll
+         * @methodOf ApiService.PostTag
+         *
+         * @description
+         *
+         * Update instances of the model matched by where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * The number of instances updated
+         */
+        "updateAll": {
+          url: urlBase + "/PostTags/update",
+          method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name ApiService.PostTag#deleteById
+         * @methodOf ApiService.PostTag
+         *
+         * @description
+         *
+         * Delete a model instance by id from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `PostTag` object.)
+         * </em>
+         */
+        "deleteById": {
+          url: urlBase + "/PostTags/:id",
+          method: "DELETE"
+        },
+
+        /**
+         * @ngdoc method
+         * @name ApiService.PostTag#count
+         * @methodOf ApiService.PostTag
+         *
+         * @description
+         *
+         * Count instances of the model matched by where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `count` – `{number=}` - 
+         */
+        "count": {
+          url: urlBase + "/PostTags/count",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name ApiService.PostTag#prototype$updateAttributes
+         * @methodOf ApiService.PostTag
+         *
+         * @description
+         *
+         * Update attributes for a model instance and persist it into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `PostTag` object.)
+         * </em>
+         */
+        "prototype$updateAttributes": {
+          url: urlBase + "/PostTags/:id",
+          method: "PUT"
+        },
+
+        /**
+         * @ngdoc method
+         * @name ApiService.PostTag#createChangeStream
+         * @methodOf ApiService.PostTag
+         *
+         * @description
+         *
+         * Create a change stream.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         *  - `options` – `{object=}` - 
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `changes` – `{ReadableStream=}` - 
+         */
+        "createChangeStream": {
+          url: urlBase + "/PostTags/change-stream",
+          method: "POST"
+        },
+      }
+    );
+
+
+
+        /**
+         * @ngdoc method
+         * @name ApiService.PostTag#updateOrCreate
+         * @methodOf ApiService.PostTag
+         *
+         * @description
+         *
+         * Update an existing model instance or insert a new one into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `PostTag` object.)
+         * </em>
+         */
+        R["updateOrCreate"] = R["upsert"];
+
+        /**
+         * @ngdoc method
+         * @name ApiService.PostTag#update
+         * @methodOf ApiService.PostTag
+         *
+         * @description
+         *
+         * Update instances of the model matched by where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * The number of instances updated
+         */
+        R["update"] = R["updateAll"];
+
+        /**
+         * @ngdoc method
+         * @name ApiService.PostTag#destroyById
+         * @methodOf ApiService.PostTag
+         *
+         * @description
+         *
+         * Delete a model instance by id from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `PostTag` object.)
+         * </em>
+         */
+        R["destroyById"] = R["deleteById"];
+
+        /**
+         * @ngdoc method
+         * @name ApiService.PostTag#removeById
+         * @methodOf ApiService.PostTag
+         *
+         * @description
+         *
+         * Delete a model instance by id from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `PostTag` object.)
+         * </em>
+         */
+        R["removeById"] = R["deleteById"];
+
+
+    /**
+    * @ngdoc property
+    * @name ApiService.PostTag#modelName
+    * @propertyOf ApiService.PostTag
+    * @description
+    * The name of the model represented by this $resource,
+    * i.e. `PostTag`.
+    */
+    R.modelName = "PostTag";
+
+
+        /**
+         * @ngdoc method
+         * @name ApiService.PostTag#post
+         * @methodOf ApiService.PostTag
+         *
+         * @description
+         *
+         * Fetches belongsTo relation post.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `refresh` – `{boolean=}` - 
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Post` object.)
+         * </em>
+         */
+        R.post = function() {
+          var TargetResource = $injector.get("Post");
+          var action = TargetResource["::get::PostTag::post"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name ApiService.PostTag#tag
+         * @methodOf ApiService.PostTag
+         *
+         * @description
+         *
+         * Fetches belongsTo relation tag.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `refresh` – `{boolean=}` - 
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Tag` object.)
+         * </em>
+         */
+        R.tag = function() {
+          var TargetResource = $injector.get("Tag");
+          var action = TargetResource["::get::PostTag::tag"];
           return action.apply(R, arguments);
         };
 
