@@ -17,15 +17,16 @@ function($scope, $mdConstant, Upload, Dialog, API, Post, Tag, PostTag) {
         $mdConstant.KEY_CODE.ENTER,
         $mdConstant.KEY_CODE.COMMA
     ];
-    $scope.file = {};
+    $scope.uploading = false;
     
     function upload(file) {
-        return Upload.upload({
+        $scope.photo.upload = Upload.upload({
             url: 'http://127.0.0.1/api/Buckets/post-images/upload',
             data: {
                 file
             }
         });
+        return $scope.photo;
     }
         
     function createPost(post, tags) {
@@ -33,12 +34,15 @@ function($scope, $mdConstant, Upload, Dialog, API, Post, Tag, PostTag) {
         for (var tag = 0; tag < tags.length; tag++) {
             tagObjs.push({ name: tags[tag] });
         }
-        upload($scope.photo)
+        upload($scope.photo);
+        $scope.uploading = true;
+        $scope.photo.upload
             .then(function(result) {
                 var url = 
                     'api/Buckets/post-images/download/' +
                     result.data.result.files.file[0].name;
                 post.imageUrl = encodeURI(url);
+                $scope.uploading = false;
                 return API.create(Post, post);  
             })
             .then(function(newPost) {
