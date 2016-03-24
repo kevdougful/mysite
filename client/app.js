@@ -9,10 +9,10 @@ angular.module('kcoffey', [
     'kcoffey.blog', 'kcoffey.editor'
 ])
 .config([
-    '$routeProvider', '$locationProvider', '$mdIconProvider',
+    '$routeProvider', '$locationProvider', '$mdIconProvider', '$httpProvider',
     'LoopBackResourceProvider',
 function(
-    $routeProvider, $locationProvider, $mdIconProvider,
+    $routeProvider, $locationProvider, $mdIconProvider, $httpProvider,
     LoopBackResourceProvider) {
 
     // Default Route
@@ -21,7 +21,11 @@ function(
     
     // Loopback AngularJS SDK
     LoopBackResourceProvider.setAuthHeader('X-Access-Token');
-    LoopBackResourceProvider.setUrlBase('http://127.0.0.1/api');
+    LoopBackResourceProvider.setUrlBase('http://192.168.1.100/api');
+    
+    // CORS
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
     
     // Icons
     $mdIconProvider.defaultIconSet('fonts/mdi.svg');
