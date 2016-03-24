@@ -30,14 +30,17 @@ function(
     // Icons
     $mdIconProvider.defaultIconSet('fonts/mdi.svg');
 }])
-.controller('AppCtrl', ['$scope', 
-function($scope) {
+.controller('AppCtrl', ['$scope', '$mdSidenav',
+function($scope, $mdSidenav) {
     $scope.today = new Date();
-    $scope.activeView = {
-
-    };
-    
+    $scope.activeView = {};
     $scope.progressActive = true;
+    $scope.openNav = function(navId) {
+        $mdSidenav(navId).toggle().then(function() {});
+    };
+    $scope.closeNav = function(navId) {
+        $mdSidenav(navId).close().then(function() {});
+    } 
     
     $scope.setProgress = function(on) {
         $scope.progressActive = on ? true : false;

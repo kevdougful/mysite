@@ -1,53 +1,51 @@
-<md-content>
-    <div id="editorPage" layout="row" layout-align="start center">
-        <div flex="25" layout-fill hide-md hide-sm hide-xs></div>
-        <div id="editorForm" layout-fill>
-            <form name="editorForm" ng-submit="createPost(post, tags)" novalidate>
-                <h2 class="md-title">New Post</h2>
-                <div class="form-content">
-                    <input type="file" ngf-select ng-model="photo" name="photo" accept="image/*">
-                    <md-chips 
-                        ng-model="tags"
-                        md-separator-keys="separatorKeys"
-                        placeholder="Enter tags"
-                        delete-button-label="Remove Tag"
-                        delete-hint="Press delete to remove tag"
-                        secondary-placeholder="+Tag">
-                    </md-chips>
-                    <md-input-container class="md-block">
-                        <label>Post Title</label>
-                        <input required type="text" name="postTitle" ng-model="post.title"/>
-                        <div ng-messages="editorForm.postTitle.$error" role="alert">
-                            <div ng-message-exp="['required']">
-                                Required
-                            </div>
+<div id="editorPage" layout="row" layout-align="start center">
+    <div flex="25" layout-fill hide-md hide-sm hide-xs></div>
+    <div id="editorForm" layout-fill>
+        <form name="editorForm" ng-submit="createPost(post, tags)" novalidate>
+            <h2 class="md-title">New Post</h2>
+            <div class="form-content">
+                <input type="file" ngf-select ng-model="photo" name="photo" accept="image/*">
+                <md-chips 
+                    ng-model="tags"
+                    md-separator-keys="separatorKeys"
+                    placeholder="Enter tags"
+                    delete-button-label="Remove Tag"
+                    delete-hint="Press delete to remove tag"
+                    secondary-placeholder="+Tag">
+                </md-chips>
+                <md-input-container class="md-block">
+                    <label>Post Title</label>
+                    <input required type="text" name="postTitle" ng-model="post.title"/>
+                    <div ng-messages="editorForm.postTitle.$error" role="alert">
+                        <div ng-message-exp="['required']">
+                            Required
                         </div>
-                    </md-input-container>
-                    <md-input-container class="md-block">
-                        <label>Content</label>
-                        <textarea rows="40" required type="text" name="postContent" md-maxlength="1000" ng-model="post.content"></textarea>
-                        <div ng-messages="editorForm.postContent.$error" role="alert">
-                            <div ng-message-exp="['required']">
-                                Required
-                            </div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>Content</label>
+                    <textarea rows="40" required type="text" name="postContent" md-maxlength="1000" ng-model="post.content"></textarea>
+                    <div ng-messages="editorForm.postContent.$error" role="alert">
+                        <div ng-message-exp="['required']">
+                            Required
                         </div>
-                    </md-input-container>
-                    <md-button type="button" class="md-icon-button" aria-label="Save">
-                        <md-tooltip md-direction="bottom">
-                            Save
-                        </md-tooltip>
-                        <md-icon md-svg-icon="content-save"></md-icon>
-                    </md-button>
-                    <md-button type="submit" ng-disabled="editorForm.$invalid" class="md-icon-button md-primary" aria-label="Publish">
-                        <md-tooltip md-direction="bottom">
-                            Publish
-                        </md-tooltip>
-                        <md-icon md-svg-icon="file-send"></md-icon>
-                    </md-button>
-                    <md-progress-circular ng-show="uploading" md-mode="indeterminate"></md-progress-circular>
-                </div>
-            </form>
-        </div>
-        <div flex="25" layout-fill hide-md hide-sm hide-xs></div>
+                    </div>
+                </md-input-container>
+                <md-button type="button" class="md-icon-button" aria-label="Save">
+                    <md-tooltip md-direction="bottom">
+                        Save
+                    </md-tooltip>
+                    <md-icon md-svg-icon="content-save"></md-icon>
+                </md-button>
+                <md-button type="submit" ng-disabled="editorForm.$invalid" class="md-icon-button md-primary" aria-label="Publish">
+                    <md-tooltip md-direction="bottom">
+                        Publish
+                    </md-tooltip>
+                    <md-icon md-svg-icon="file-send"></md-icon>
+                </md-button>
+                <md-progress-circular ng-show="uploading" md-mode="indeterminate"></md-progress-circular>
+            </div>
+        </form>
     </div>
-</md-content>
+    <div flex="25" layout-fill hide-md hide-sm hide-xs></div>
+</div>
