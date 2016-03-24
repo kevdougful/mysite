@@ -1,6 +1,6 @@
 {
-  "name": "PostImages",
-  "plural": "PostImages",
+  "name": "Bucket",
+  "plural": "Buckets",
   "base": "Model",
   "idInjection": true,
   "options": {

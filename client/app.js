@@ -2,7 +2,7 @@
 
 angular.module('kcoffey', [
     // Angular Dependencies
-    'ngRoute', 'ngMaterial', 'ngMessages',
+    'ngRoute', 'ngMaterial', 'ngMessages', 'ngFileUpload',
     // Services
     'kcoffey.ui', 'ApiService', 'kcoffey.api',
     // Views 

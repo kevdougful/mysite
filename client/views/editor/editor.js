@@ -8,8 +8,8 @@ angular.module('kcoffey.editor', ['ngRoute'])
     });
 }])
 // Submit view controller
-.controller('EditorCtrl', ['$scope', '$mdConstant', 'Dialog', 'API', 'Post', 'Tag', 'PostTag',
-function($scope, $mdConstant, Dialog, API, Post, Tag, PostTag) {
+.controller('EditorCtrl', ['$scope', '$mdConstant', 'Upload', 'Dialog', 'API', 'Post', 'Tag', 'PostTag',
+function($scope, $mdConstant, Upload, Dialog, API, Post, Tag, PostTag) {
     $scope.post = {};
     $scope.tags = [];
     $scope.createPost = createPost;
@@ -17,13 +17,30 @@ function($scope, $mdConstant, Dialog, API, Post, Tag, PostTag) {
         $mdConstant.KEY_CODE.ENTER,
         $mdConstant.KEY_CODE.COMMA
     ];
+    $scope.file = {};
+    
+    function upload(file) {
+        return Upload.upload({
+            url: 'http://127.0.0.1/api/Buckets/post-images/upload',
+            data: {
+                file
+            }
+        });
+    }
         
     function createPost(post, tags) {
         var tagObjs = [];
         for (var tag = 0; tag < tags.length; tag++) {
             tagObjs.push({ name: tags[tag] });
         }
-        API.create(Post, post)
+        upload($scope.photo)
+            .then(function(result) {
+                var url = 
+                    'api/Buckets/post-images/download/' +
+                    result.data.result.files.file[0].name;
+                post.imageUrl = encodeURI(url);
+                return API.create(Post, post);  
+            })
             .then(function(newPost) {
                 $scope.post = newPost;
                 return API.fetchOrCreateArray(Tag, tagObjs);

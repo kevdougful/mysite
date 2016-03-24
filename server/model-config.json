@@ -48,7 +48,7 @@
     "dataSource": "db",
     "public": true
   },
-  "PostImages": {
+  "Bucket": {
     "dataSource": "s3",
     "public": true
   }

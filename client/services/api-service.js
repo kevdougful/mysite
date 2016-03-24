@@ -5189,13 +5189,13 @@ module.factory(
 
 /**
  * @ngdoc object
- * @name ApiService.PostImages
- * @header ApiService.PostImages
+ * @name ApiService.Bucket
+ * @header ApiService.Bucket
  * @object
  *
  * @description
  *
- * A $resource object for interacting with the `PostImages` model.
+ * A $resource object for interacting with the `Bucket` model.
  *
  * ## Example
  *
@@ -5205,17 +5205,17 @@ module.factory(
  *
  */
 module.factory(
-  "PostImages",
+  "Bucket",
   ['LoopBackResource', 'LoopBackAuth', '$injector', function(Resource, LoopBackAuth, $injector) {
     var R = Resource(
-      urlBase + "/PostImages/:id",
+      urlBase + "/Buckets/:id",
       { 'id': '@id' },
       {
 
         /**
          * @ngdoc method
-         * @name ApiService.PostImages#getContainers
-         * @methodOf ApiService.PostImages
+         * @name ApiService.Bucket#getContainers
+         * @methodOf ApiService.Bucket
          *
          * @description
          *
@@ -5240,19 +5240,19 @@ module.factory(
          *
          * <em>
          * (The remote method definition does not provide any description.
-         * This usually means the response is a `PostImages` object.)
+         * This usually means the response is a `Bucket` object.)
          * </em>
          */
         "getContainers": {
           isArray: true,
-          url: urlBase + "/PostImages",
+          url: urlBase + "/Buckets",
           method: "GET"
         },
 
         /**
          * @ngdoc method
-         * @name ApiService.PostImages#createContainer
-         * @methodOf ApiService.PostImages
+         * @name ApiService.Bucket#createContainer
+         * @methodOf ApiService.Bucket
          *
          * @description
          *
@@ -5281,18 +5281,18 @@ module.factory(
          *
          * <em>
          * (The remote method definition does not provide any description.
-         * This usually means the response is a `PostImages` object.)
+         * This usually means the response is a `Bucket` object.)
          * </em>
          */
         "createContainer": {
-          url: urlBase + "/PostImages",
+          url: urlBase + "/Buckets",
           method: "POST"
         },
 
         /**
          * @ngdoc method
-         * @name ApiService.PostImages#destroyContainer
-         * @methodOf ApiService.PostImages
+         * @name ApiService.Bucket#destroyContainer
+         * @methodOf ApiService.Bucket
          *
          * @description
          *
@@ -5319,14 +5319,14 @@ module.factory(
          *  - `` – `{undefined=}` - 
          */
         "destroyContainer": {
-          url: urlBase + "/PostImages/:container",
+          url: urlBase + "/Buckets/:container",
           method: "DELETE"
         },
 
         /**
          * @ngdoc method
-         * @name ApiService.PostImages#getContainer
-         * @methodOf ApiService.PostImages
+         * @name ApiService.Bucket#getContainer
+         * @methodOf ApiService.Bucket
          *
          * @description
          *
@@ -5350,18 +5350,18 @@ module.factory(
          *
          * <em>
          * (The remote method definition does not provide any description.
-         * This usually means the response is a `PostImages` object.)
+         * This usually means the response is a `Bucket` object.)
          * </em>
          */
         "getContainer": {
-          url: urlBase + "/PostImages/:container",
+          url: urlBase + "/Buckets/:container",
           method: "GET"
         },
 
         /**
          * @ngdoc method
-         * @name ApiService.PostImages#getFiles
-         * @methodOf ApiService.PostImages
+         * @name ApiService.Bucket#getFiles
+         * @methodOf ApiService.Bucket
          *
          * @description
          *
@@ -5385,19 +5385,19 @@ module.factory(
          *
          * <em>
          * (The remote method definition does not provide any description.
-         * This usually means the response is a `PostImages` object.)
+         * This usually means the response is a `Bucket` object.)
          * </em>
          */
         "getFiles": {
           isArray: true,
-          url: urlBase + "/PostImages/:container/files",
+          url: urlBase + "/Buckets/:container/files",
           method: "GET"
         },
 
         /**
          * @ngdoc method
-         * @name ApiService.PostImages#getFile
-         * @methodOf ApiService.PostImages
+         * @name ApiService.Bucket#getFile
+         * @methodOf ApiService.Bucket
          *
          * @description
          *
@@ -5423,18 +5423,18 @@ module.factory(
          *
          * <em>
          * (The remote method definition does not provide any description.
-         * This usually means the response is a `PostImages` object.)
+         * This usually means the response is a `Bucket` object.)
          * </em>
          */
         "getFile": {
-          url: urlBase + "/PostImages/:container/files/:file",
+          url: urlBase + "/Buckets/:container/files/:file",
           method: "GET"
         },
 
         /**
          * @ngdoc method
-         * @name ApiService.PostImages#removeFile
-         * @methodOf ApiService.PostImages
+         * @name ApiService.Bucket#removeFile
+         * @methodOf ApiService.Bucket
          *
          * @description
          *
@@ -5463,14 +5463,14 @@ module.factory(
          *  - `` – `{undefined=}` - 
          */
         "removeFile": {
-          url: urlBase + "/PostImages/:container/files/:file",
+          url: urlBase + "/Buckets/:container/files/:file",
           method: "DELETE"
         },
 
         /**
          * @ngdoc method
-         * @name ApiService.PostImages#upload
-         * @methodOf ApiService.PostImages
+         * @name ApiService.Bucket#upload
+         * @methodOf ApiService.Bucket
          *
          * @description
          *
@@ -5504,14 +5504,14 @@ module.factory(
          *  - `result` – `{object=}` - 
          */
         "upload": {
-          url: urlBase + "/PostImages/:container/upload",
+          url: urlBase + "/Buckets/:container/upload",
           method: "POST"
         },
 
         /**
          * @ngdoc method
-         * @name ApiService.PostImages#download
-         * @methodOf ApiService.PostImages
+         * @name ApiService.Bucket#download
+         * @methodOf ApiService.Bucket
          *
          * @description
          *
@@ -5542,7 +5542,7 @@ module.factory(
          * This method returns no data.
          */
         "download": {
-          url: urlBase + "/PostImages/:container/download/:file",
+          url: urlBase + "/Buckets/:container/download/:file",
           method: "GET"
         },
       }
@@ -5553,13 +5553,13 @@ module.factory(
 
     /**
     * @ngdoc property
-    * @name ApiService.PostImages#modelName
-    * @propertyOf ApiService.PostImages
+    * @name ApiService.Bucket#modelName
+    * @propertyOf ApiService.Bucket
     * @description
     * The name of the model represented by this $resource,
-    * i.e. `PostImages`.
+    * i.e. `Bucket`.
     */
-    R.modelName = "PostImages";
+    R.modelName = "Bucket";
 
 
     return R;

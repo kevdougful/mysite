@@ -5,6 +5,7 @@
             <form name="editorForm" ng-submit="createPost(post, tags)" novalidate>
                 <h2 class="md-title">New Post</h2>
                 <div class="form-content">
+                    <input type="file" ngf-select ng-model="photo" name="photo" accept="image/*">
                     <md-chips 
                         ng-model="tags"
                         md-separator-keys="separatorKeys"
