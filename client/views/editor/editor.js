@@ -20,13 +20,10 @@ function($scope, $mdConstant, Upload, Dialog, API, Post, Tag, PostTag) {
     $scope.uploading = false;
     
     function upload(file) {
-        $scope.photo.upload = Upload.upload({
+        return Upload.upload({
             url: 'http://127.0.0.1/api/Buckets/post-images/upload',
-            data: {
-                file
-            }
+            data: { file }
         });
-        return $scope.photo;
     }
         
     function createPost(post, tags) {
@@ -34,15 +31,15 @@ function($scope, $mdConstant, Upload, Dialog, API, Post, Tag, PostTag) {
         for (var tag = 0; tag < tags.length; tag++) {
             tagObjs.push({ name: tags[tag] });
         }
-        upload($scope.photo);
         $scope.uploading = true;
-        $scope.photo.upload
+        upload($scope.photo)
             .then(function(result) {
-                var url = 
+                if(result.data.result.fields.files) {
+                    var url = 
                     'api/Buckets/post-images/download/' +
                     result.data.result.files.file[0].name;
-                post.imageUrl = encodeURI(url);
-                $scope.uploading = false;
+                    post.imageUrl = encodeURI(url);  
+                }
                 return API.create(Post, post);  
             })
             .then(function(newPost) {
@@ -61,9 +58,11 @@ function($scope, $mdConstant, Upload, Dialog, API, Post, Tag, PostTag) {
             })
             .then(function(newPostTags) {
                 Dialog.notify('Post published', 3000);
+                $scope.uploading = false; 
             })
             .catch(function(err) {
                 Dialog.notify('Error!', 3000);
+                $scope.uploading = false; 
             });
     }
     

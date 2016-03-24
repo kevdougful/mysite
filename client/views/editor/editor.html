@@ -5,10 +5,7 @@
             <form name="editorForm" ng-submit="createPost(post, tags)" novalidate>
                 <h2 class="md-title">New Post</h2>
                 <div class="form-content">
-                    <div layout="row">
-                        <input type="file" ngf-select ng-model="photo" name="photo" accept="image/*">
-                        <md-progress-circular ng-show="uploading" md-mode="indeterminate"></md-progress-circular>
-                    </div>
+                    <input type="file" ngf-select ng-model="photo" name="photo" accept="image/*">
                     <md-chips 
                         ng-model="tags"
                         md-separator-keys="separatorKeys"
@@ -47,6 +44,7 @@
                         </md-tooltip>
                         <md-icon md-svg-icon="file-send"></md-icon>
                     </md-button>
+                    <md-progress-circular ng-show="uploading" md-mode="indeterminate"></md-progress-circular>
                 </div>
             </form>
         </div>
