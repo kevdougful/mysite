@@ -21,7 +21,7 @@ function($scope, $mdConstant, Upload, Dialog, API, Post, Tag, PostTag) {
     
     function upload(file) {
         return Upload.upload({
-            url: 'http://127.0.0.1/api/Buckets/post-images/upload',
+            url: 'http://192.168.1.100/api/Buckets/post-images/upload',
             data: { file }
         });
     }
@@ -34,7 +34,7 @@ function($scope, $mdConstant, Upload, Dialog, API, Post, Tag, PostTag) {
         $scope.uploading = true;
         upload($scope.photo)
             .then(function(result) {
-                if(result.data.result.fields.files) {
+                if($scope.photo) {
                     var url = 
                     'api/Buckets/post-images/download/' +
                     result.data.result.files.file[0].name;
