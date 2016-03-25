@@ -3,7 +3,14 @@
 var gulp = require('gulp');
 var rename = require('gulp-rename');
 var loopbackAngularSdk = require('gulp-loopback-sdk-angular');
+var install = require('gulp-install');
 var exec = require('child_process').exec;
+
+// Install Dependencies
+gulp.task('install', function() {
+    gulp.src(['./package.json', './client/package.json'])
+        .pipe(install());
+});
 
 // Generate AngularJS service for API
 gulp.task('api-service', function() {
