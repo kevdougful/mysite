@@ -1,5 +1,7 @@
 'use strict';
 
+var _ = require('lodash');
+
 var baseConfig = {
     basePath: __dirname,
     frameworks: ['jasmine'],
@@ -31,28 +33,27 @@ var allPlugins = [
 ];
 
 function base() {
-    var config = baseConfig;
-    config.files = testFiles;
-    config.singleRun = true;
-    config.autoWatch = false;
-    return config;
+    return _.assign({},
+        baseConfig,
+        { files: testFiles },
+        { singleRun: true },
+        { autoWatch: false });
 }
 
 function browsers() {
-    var config = baseConfig;
-    config.files = testFiles;
-    config.singleRun = true;
-    config.autoWatch = false;
-    config.plugins = allPlugins;
-    config.browsers = allBrowsers;
-    console.log(config);
-    return config;
+    return _.assign({},
+        baseConfig,
+        { files: testFiles },
+        { singleRun: true },
+        { autoWatch: false },
+        { plugins: allPlugins },
+        { browsers: allBrowsers });
 }
 
 function tdd() {
-    var config = baseConfig;
-    config.files = testFiles;
-    return config;
+    return _.assign({},
+        baseConfig,
+        { files: testFiles });
 }
 
 module.exports = {
