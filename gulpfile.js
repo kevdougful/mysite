@@ -4,12 +4,15 @@ var gulp = require('gulp');
 var rename = require('gulp-rename');
 var loopbackAngularSdk = require('gulp-loopback-sdk-angular');
 var install = require('gulp-install');
+var util = require('gulp-util')
 var exec = require('child_process').exec;
 
 // Install Dependencies
 gulp.task('install', function() {
-    gulp.src(['./package.json', './client/package.json'])
-        .pipe(install());
+    var environment = util.env.NODE_ENV;
+    var isProd = environment == 'production';
+    return gulp.src(['./package.json', './client/package.json'])
+        .pipe(install({production: isProd}));
 });
 
 // Generate AngularJS service for API
