@@ -19,3 +19,6 @@ node_modules
 npm-debug.log
 datasources.json
 db.local.json
+
+build.js
+build.js.map

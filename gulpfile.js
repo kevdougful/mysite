@@ -68,3 +68,32 @@ gulp.task('test-browsers', function(done) {
 gulp.task('tdd', function(done) {
     new Server(karmaConfig.tdd, done).start();
 });
+
+var watchify = require('watchify');
+var browserify = require('browserify');
+var source = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
+var sourcemaps = require('gulp-sourcemaps');
+var uglify = require('gulp-uglify');
+
+var browserifyOptions = {
+    entries: ['./client/js/app.js'],
+    debug: true
+};
+var options = _.assign({}, watchify.args, browserifyOptions);
+var b = watchify(browserify(options));
+
+gulp.task('build', bundle);
+b.on('update', bundle);
+b.on('log', util.log);
+
+function bundle() {
+    return b.bundle()
+        .on('error', util.log.bind(util, 'Browserify Error'))
+        .pipe(source('build.js'))
+        .pipe(buffer())
+        .pipe(sourcemaps.init({loadMaps: true}))
+        .pipe(uglify())
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest('./client'));
+}

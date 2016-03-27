@@ -15,7 +15,7 @@ function($scope, $mdConstant, API, Upload, Dialog, ApiHelpers, Post, Tag, PostTa
     function upload(file) {
         return Upload.upload({
             url: API.URL + API.BUCKET.POST_IMAGES_UP,
-            data: { file }
+            data: { file: file }
         });
     }
         

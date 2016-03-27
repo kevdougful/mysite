@@ -34,6 +34,8 @@
     "gulp-install": "^0.6.0",
     "gulp-loopback-sdk-angular": "^0.1.4",
     "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.3",
     "jasmine-core": "^2.4.1",
     "jshint": "^2.5.6",
     "karma": "^0.13.22",
@@ -49,7 +51,10 @@
     "phantomjs-prebuilt": "^2.1.6",
     "resrcify": "^1.0.1",
     "sinon": "^1.17.3",
-    "sinon-chai": "^2.8.0"
+    "sinon-chai": "^2.8.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0"
   },
   "repository": {
     "type": "",
