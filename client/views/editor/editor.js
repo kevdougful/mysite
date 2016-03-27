@@ -8,8 +8,8 @@ angular.module('kcoffey.editor', ['ngRoute'])
     });
 }])
 // Submit view controller
-.controller('EditorCtrl', ['$scope', '$mdConstant', 'Upload', 'Dialog', 'API', 'Post', 'Tag', 'PostTag',
-function($scope, $mdConstant, Upload, Dialog, API, Post, Tag, PostTag) {
+.controller('EditorCtrl', ['$scope', '$mdConstant', 'API', 'Upload', 'Dialog', 'ApiHelpers', 'Post', 'Tag', 'PostTag',
+function($scope, $mdConstant, API, Upload, Dialog, ApiHelpers, Post, Tag, PostTag) {
     $scope.post = {};
     $scope.tags = [];
     $scope.createPost = createPost;
@@ -21,7 +21,7 @@ function($scope, $mdConstant, Upload, Dialog, API, Post, Tag, PostTag) {
     
     function upload(file) {
         return Upload.upload({
-            url: 'http://192.168.1.100/api/Buckets/post-images/upload',
+            url: API.URL + API.BUCKET.POST_IMAGES_UP,
             data: { file }
         });
     }
@@ -35,16 +35,16 @@ function($scope, $mdConstant, Upload, Dialog, API, Post, Tag, PostTag) {
         upload($scope.photo)
             .then(function(result) {
                 if($scope.photo) {
-                    var url = 
-                    'api/Buckets/post-images/download/' +
-                    result.data.result.files.file[0].name;
-                    post.imageUrl = encodeURI(url);  
+                    post.imageUrl = encodeURI(
+                        API.URL + API.BUCKET.POST_IMAGES_DOWN +
+                        result.data.result.files.file[0].name
+                    );  
                 }
-                return API.create(Post, post);  
+                return Post.create(post).$promise;
             })
             .then(function(newPost) {
                 $scope.post = newPost;
-                return API.fetchOrCreateArray(Tag, tagObjs);
+                return ApiHelpers.fetchOrCreateArray(Tag, tagObjs);
             })
             .then(function(newTags) {
                 var postTags = [];
@@ -54,7 +54,7 @@ function($scope, $mdConstant, Upload, Dialog, API, Post, Tag, PostTag) {
                         tagId: newTags[newTag].id
                     });
                 }
-                return API.fetchOrCreateArray(PostTag, postTags);
+                return ApiHelpers.fetchOrCreateArray(PostTag, postTags);
             })
             .then(function(newPostTags) {
                 Dialog.notify('Post published', 3000);

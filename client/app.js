@@ -8,12 +8,19 @@ angular.module('kcoffey', [
     // Views 
     'kcoffey.blog', 'kcoffey.editor'
 ])
+.constant('API', {
+    'URL': 'http://192.168.1.100/api/',
+    'BUCKET': {
+        'POST_IMAGES_UP': 'Buckets/post-images/upload/',
+        'POST_IMAGES_DOWN': 'Buckets/post-images/download/'
+    }
+})
 .config([
     '$routeProvider', '$locationProvider', '$mdIconProvider', '$httpProvider',
-    'LoopBackResourceProvider',
+    'LoopBackResourceProvider', 'API',
 function(
     $routeProvider, $locationProvider, $mdIconProvider, $httpProvider,
-    LoopBackResourceProvider) {
+    LoopBackResourceProvider, API) {
 
     // Default Route
     $routeProvider.otherwise({ redirectTo: '/blog' });
@@ -21,7 +28,7 @@ function(
     
     // Loopback AngularJS SDK
     LoopBackResourceProvider.setAuthHeader('X-Access-Token');
-    LoopBackResourceProvider.setUrlBase('http://192.168.1.100/api');
+    LoopBackResourceProvider.setUrlBase(API.URL);
     
     // CORS
     $httpProvider.defaults.useXDomain = true;

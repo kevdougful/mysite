@@ -8,11 +8,11 @@ angular.module('kcoffey.blog', ['ngRoute'])
     });
 }])
 // Submit view controller
-.controller('BlogCtrl', ['$scope', 'API', 'Post', 'Dialog',
-function($scope, API, Post, Dialog) {
+.controller('BlogCtrl', ['$scope', 'Post', 'Dialog',
+function($scope, Post, Dialog) {
     $scope.posts = [];
     
-    API.fetch(Post)
+    Post.find().$promise
         .then(function(posts) {
             $scope.posts = posts;
         })
