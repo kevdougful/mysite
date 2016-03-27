@@ -17,14 +17,14 @@ gulp.task('install', function() {
         .pipe(install({production: isProd}));
 });
 
-// Generate AngularJS service for API
-gulp.task('api-service', function() {
+// Generate AngularJS services for loopback API
+gulp.task('lb', function() {
     return gulp.src('./server/server.js')
         .pipe(loopbackAngularSdk({
-            ngModuleName: 'ApiService'
+            ngModuleName: 'ApiServices'
         }))
-        .pipe(rename('api-service.js'))
-        .pipe(gulp.dest('./client/services'));
+        .pipe(rename('loopback-sdk.js'))
+        .pipe(gulp.dest('./client/js'));
 });
 
 // Update DB Schema (do not drop tables)

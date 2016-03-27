@@ -1,9 +1,8 @@
 'use strict';
-
-angular.module('kcoffey.ui', [])
-.factory('Dialog', ['$mdToast', 
+module.exports = 
+['$mdToast', 
 function($mdToast) {
-    
+
     function notify(text, delay, actionText) {
         var toast = $mdToast.simple()
             .textContent(text)
@@ -18,4 +17,4 @@ function($mdToast) {
         notify: notify
     };
     
-}]);
+}];

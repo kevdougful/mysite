@@ -1,15 +1,8 @@
 'use strict';
-
-angular.module('kcoffey.editor', ['ngRoute'])
-.config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when('/editor', {
-        templateUrl: 'views/editor/editor.html',
-        controller: 'EditorCtrl'
-    });
-}])
-// Submit view controller
-.controller('EditorCtrl', ['$scope', '$mdConstant', 'API', 'Upload', 'Dialog', 'ApiHelpers', 'Post', 'Tag', 'PostTag',
+module.exports = 
+['$scope', '$mdConstant', 'API', 'Upload', 'Dialog', 'ApiHelpers', 'Post', 'Tag', 'PostTag',
 function($scope, $mdConstant, API, Upload, Dialog, ApiHelpers, Post, Tag, PostTag) {
+    
     $scope.post = {};
     $scope.tags = [];
     $scope.createPost = createPost;
@@ -66,4 +59,4 @@ function($scope, $mdConstant, API, Upload, Dialog, ApiHelpers, Post, Tag, PostTa
             });
     }
     
-}]);
+}];

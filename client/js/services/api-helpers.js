@@ -1,7 +1,8 @@
 'use strict';
 
-angular.module('kcoffey.api', [])
-.factory('ApiHelpers', ['$q', function($q) {
+module.exports = 
+['$q', 
+function($q) {
       
     function fetchOrCreate(service, obj) {
         var deferred = $q.defer();
@@ -40,4 +41,4 @@ angular.module('kcoffey.api', [])
         fetchOrCreateArray: fetchOrCreateArray
     };
     
-}]);
+}];

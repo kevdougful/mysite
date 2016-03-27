@@ -6,7 +6,7 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
   //   import lbServices from './lb-services';
   //   angular.module('app', [lbServices]);
   //
-  module.exports = "ApiService";
+  module.exports = "ApiServices";
 }
 
 (function(window, angular, undefined) {'use strict';
@@ -23,20 +23,20 @@ var urlBaseHost = getHost(urlBase) || location.host;
 
 /**
  * @ngdoc overview
- * @name ApiService
+ * @name ApiServices
  * @module
  * @description
  *
- * The `ApiService` module provides services for interacting with
+ * The `ApiServices` module provides services for interacting with
  * the models exposed by the LoopBack server via the REST API.
  *
  */
-var module = angular.module("ApiService", ['ngResource']);
+var module = angular.module("ApiServices", ['ngResource']);
 
 /**
  * @ngdoc object
- * @name ApiService.User
- * @header ApiService.User
+ * @name ApiServices.User
+ * @header ApiServices.User
  * @object
  *
  * @description
@@ -60,8 +60,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.User#prototype$__findById__accessTokens
-         * @methodOf ApiService.User
+         * @name ApiServices.User#prototype$__findById__accessTokens
+         * @methodOf ApiServices.User
          *
          * @description
          *
@@ -98,8 +98,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.User#prototype$__destroyById__accessTokens
-         * @methodOf ApiService.User
+         * @name ApiServices.User#prototype$__destroyById__accessTokens
+         * @methodOf ApiServices.User
          *
          * @description
          *
@@ -133,8 +133,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.User#prototype$__updateById__accessTokens
-         * @methodOf ApiService.User
+         * @name ApiServices.User#prototype$__updateById__accessTokens
+         * @methodOf ApiServices.User
          *
          * @description
          *
@@ -175,8 +175,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.User#prototype$__get__accessTokens
-         * @methodOf ApiService.User
+         * @name ApiServices.User#prototype$__get__accessTokens
+         * @methodOf ApiServices.User
          *
          * @description
          *
@@ -211,8 +211,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.User#prototype$__create__accessTokens
-         * @methodOf ApiService.User
+         * @name ApiServices.User#prototype$__create__accessTokens
+         * @methodOf ApiServices.User
          *
          * @description
          *
@@ -248,8 +248,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.User#prototype$__delete__accessTokens
-         * @methodOf ApiService.User
+         * @name ApiServices.User#prototype$__delete__accessTokens
+         * @methodOf ApiServices.User
          *
          * @description
          *
@@ -278,8 +278,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.User#prototype$__count__accessTokens
-         * @methodOf ApiService.User
+         * @name ApiServices.User#prototype$__count__accessTokens
+         * @methodOf ApiServices.User
          *
          * @description
          *
@@ -312,8 +312,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.User#create
-         * @methodOf ApiService.User
+         * @name ApiServices.User#create
+         * @methodOf ApiServices.User
          *
          * @description
          *
@@ -350,8 +350,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.User#createMany
-         * @methodOf ApiService.User
+         * @name ApiServices.User#createMany
+         * @methodOf ApiServices.User
          *
          * @description
          *
@@ -389,8 +389,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.User#upsert
-         * @methodOf ApiService.User
+         * @name ApiServices.User#upsert
+         * @methodOf ApiServices.User
          *
          * @description
          *
@@ -427,8 +427,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.User#exists
-         * @methodOf ApiService.User
+         * @name ApiServices.User#exists
+         * @methodOf ApiServices.User
          *
          * @description
          *
@@ -459,8 +459,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.User#findById
-         * @methodOf ApiService.User
+         * @name ApiServices.User#findById
+         * @methodOf ApiServices.User
          *
          * @description
          *
@@ -494,8 +494,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.User#find
-         * @methodOf ApiService.User
+         * @name ApiServices.User#find
+         * @methodOf ApiServices.User
          *
          * @description
          *
@@ -528,8 +528,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.User#findOne
-         * @methodOf ApiService.User
+         * @name ApiServices.User#findOne
+         * @methodOf ApiServices.User
          *
          * @description
          *
@@ -561,8 +561,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.User#updateAll
-         * @methodOf ApiService.User
+         * @name ApiServices.User#updateAll
+         * @methodOf ApiServices.User
          *
          * @description
          *
@@ -595,8 +595,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.User#deleteById
-         * @methodOf ApiService.User
+         * @name ApiServices.User#deleteById
+         * @methodOf ApiServices.User
          *
          * @description
          *
@@ -628,8 +628,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.User#count
-         * @methodOf ApiService.User
+         * @name ApiServices.User#count
+         * @methodOf ApiServices.User
          *
          * @description
          *
@@ -660,8 +660,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.User#prototype$updateAttributes
-         * @methodOf ApiService.User
+         * @name ApiServices.User#prototype$updateAttributes
+         * @methodOf ApiServices.User
          *
          * @description
          *
@@ -697,8 +697,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.User#createChangeStream
-         * @methodOf ApiService.User
+         * @name ApiServices.User#createChangeStream
+         * @methodOf ApiServices.User
          *
          * @description
          *
@@ -734,8 +734,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.User#login
-         * @methodOf ApiService.User
+         * @name ApiServices.User#login
+         * @methodOf ApiServices.User
          *
          * @description
          *
@@ -790,8 +790,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.User#logout
-         * @methodOf ApiService.User
+         * @name ApiServices.User#logout
+         * @methodOf ApiServices.User
          *
          * @description
          *
@@ -832,8 +832,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.User#confirm
-         * @methodOf ApiService.User
+         * @name ApiServices.User#confirm
+         * @methodOf ApiServices.User
          *
          * @description
          *
@@ -866,8 +866,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.User#resetPassword
-         * @methodOf ApiService.User
+         * @name ApiServices.User#resetPassword
+         * @methodOf ApiServices.User
          *
          * @description
          *
@@ -901,8 +901,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.User#getCurrent
-         * @methodOf ApiService.User
+         * @name ApiServices.User#getCurrent
+         * @methodOf ApiServices.User
          *
          * @description
          *
@@ -944,8 +944,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.User#updateOrCreate
-         * @methodOf ApiService.User
+         * @name ApiServices.User#updateOrCreate
+         * @methodOf ApiServices.User
          *
          * @description
          *
@@ -979,8 +979,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.User#update
-         * @methodOf ApiService.User
+         * @name ApiServices.User#update
+         * @methodOf ApiServices.User
          *
          * @description
          *
@@ -1010,8 +1010,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.User#destroyById
-         * @methodOf ApiService.User
+         * @name ApiServices.User#destroyById
+         * @methodOf ApiServices.User
          *
          * @description
          *
@@ -1040,8 +1040,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.User#removeById
-         * @methodOf ApiService.User
+         * @name ApiServices.User#removeById
+         * @methodOf ApiServices.User
          *
          * @description
          *
@@ -1070,14 +1070,14 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.User#getCachedCurrent
-         * @methodOf ApiService.User
+         * @name ApiServices.User#getCachedCurrent
+         * @methodOf ApiServices.User
          *
          * @description
          *
          * Get data of the currently logged user that was returned by the last
-         * call to {@link ApiService.User#login} or
-         * {@link ApiService.User#getCurrent}. Return null when there
+         * call to {@link ApiServices.User#login} or
+         * {@link ApiServices.User#getCurrent}. Return null when there
          * is no user logged in or the data of the current user were not fetched
          * yet.
          *
@@ -1090,8 +1090,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.User#isAuthenticated
-         * @methodOf ApiService.User
+         * @name ApiServices.User#isAuthenticated
+         * @methodOf ApiServices.User
          *
          * @returns {boolean} True if the current user is authenticated (logged in).
          */
@@ -1101,8 +1101,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.User#getCurrentId
-         * @methodOf ApiService.User
+         * @name ApiServices.User#getCurrentId
+         * @methodOf ApiServices.User
          *
          * @returns {Object} Id of the currently logged-in user or null.
          */
@@ -1112,8 +1112,8 @@ module.factory(
 
     /**
     * @ngdoc property
-    * @name ApiService.User#modelName
-    * @propertyOf ApiService.User
+    * @name ApiServices.User#modelName
+    * @propertyOf ApiServices.User
     * @description
     * The name of the model represented by this $resource,
     * i.e. `User`.
@@ -1126,8 +1126,8 @@ module.factory(
 
 /**
  * @ngdoc object
- * @name ApiService.Post
- * @header ApiService.Post
+ * @name ApiServices.Post
+ * @header ApiServices.Post
  * @object
  *
  * @description
@@ -1236,8 +1236,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Post#create
-         * @methodOf ApiService.Post
+         * @name ApiServices.Post#create
+         * @methodOf ApiServices.Post
          *
          * @description
          *
@@ -1274,8 +1274,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Post#createMany
-         * @methodOf ApiService.Post
+         * @name ApiServices.Post#createMany
+         * @methodOf ApiServices.Post
          *
          * @description
          *
@@ -1313,8 +1313,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Post#upsert
-         * @methodOf ApiService.Post
+         * @name ApiServices.Post#upsert
+         * @methodOf ApiServices.Post
          *
          * @description
          *
@@ -1351,8 +1351,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Post#exists
-         * @methodOf ApiService.Post
+         * @name ApiServices.Post#exists
+         * @methodOf ApiServices.Post
          *
          * @description
          *
@@ -1383,8 +1383,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Post#findById
-         * @methodOf ApiService.Post
+         * @name ApiServices.Post#findById
+         * @methodOf ApiServices.Post
          *
          * @description
          *
@@ -1418,8 +1418,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Post#find
-         * @methodOf ApiService.Post
+         * @name ApiServices.Post#find
+         * @methodOf ApiServices.Post
          *
          * @description
          *
@@ -1452,8 +1452,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Post#findOne
-         * @methodOf ApiService.Post
+         * @name ApiServices.Post#findOne
+         * @methodOf ApiServices.Post
          *
          * @description
          *
@@ -1485,8 +1485,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Post#updateAll
-         * @methodOf ApiService.Post
+         * @name ApiServices.Post#updateAll
+         * @methodOf ApiServices.Post
          *
          * @description
          *
@@ -1519,8 +1519,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Post#deleteById
-         * @methodOf ApiService.Post
+         * @name ApiServices.Post#deleteById
+         * @methodOf ApiServices.Post
          *
          * @description
          *
@@ -1552,8 +1552,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Post#count
-         * @methodOf ApiService.Post
+         * @name ApiServices.Post#count
+         * @methodOf ApiServices.Post
          *
          * @description
          *
@@ -1584,8 +1584,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Post#prototype$updateAttributes
-         * @methodOf ApiService.Post
+         * @name ApiServices.Post#prototype$updateAttributes
+         * @methodOf ApiServices.Post
          *
          * @description
          *
@@ -1621,8 +1621,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Post#createChangeStream
-         * @methodOf ApiService.Post
+         * @name ApiServices.Post#createChangeStream
+         * @methodOf ApiServices.Post
          *
          * @description
          *
@@ -1813,8 +1813,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Post#updateOrCreate
-         * @methodOf ApiService.Post
+         * @name ApiServices.Post#updateOrCreate
+         * @methodOf ApiServices.Post
          *
          * @description
          *
@@ -1848,8 +1848,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Post#update
-         * @methodOf ApiService.Post
+         * @name ApiServices.Post#update
+         * @methodOf ApiServices.Post
          *
          * @description
          *
@@ -1879,8 +1879,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Post#destroyById
-         * @methodOf ApiService.Post
+         * @name ApiServices.Post#destroyById
+         * @methodOf ApiServices.Post
          *
          * @description
          *
@@ -1909,8 +1909,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Post#removeById
-         * @methodOf ApiService.Post
+         * @name ApiServices.Post#removeById
+         * @methodOf ApiServices.Post
          *
          * @description
          *
@@ -1940,8 +1940,8 @@ module.factory(
 
     /**
     * @ngdoc property
-    * @name ApiService.Post#modelName
-    * @propertyOf ApiService.Post
+    * @name ApiServices.Post#modelName
+    * @propertyOf ApiServices.Post
     * @description
     * The name of the model represented by this $resource,
     * i.e. `Post`.
@@ -1950,23 +1950,23 @@ module.factory(
 
     /**
      * @ngdoc object
-     * @name ApiService.Post.tags
-     * @header ApiService.Post.tags
+     * @name ApiServices.Post.tags
+     * @header ApiServices.Post.tags
      * @object
      * @description
      *
      * The object `Post.tags` groups methods
      * manipulating `Tag` instances related to `Post`.
      *
-     * Call {@link ApiService.Post#tags Post.tags()}
+     * Call {@link ApiServices.Post#tags Post.tags()}
      * to query all related instances.
      */
 
 
         /**
          * @ngdoc method
-         * @name ApiService.Post#tags
-         * @methodOf ApiService.Post
+         * @name ApiServices.Post#tags
+         * @methodOf ApiServices.Post
          *
          * @description
          *
@@ -2001,8 +2001,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Post.tags#count
-         * @methodOf ApiService.Post.tags
+         * @name ApiServices.Post.tags#count
+         * @methodOf ApiServices.Post.tags
          *
          * @description
          *
@@ -2036,8 +2036,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Post.tags#create
-         * @methodOf ApiService.Post.tags
+         * @name ApiServices.Post.tags#create
+         * @methodOf ApiServices.Post.tags
          *
          * @description
          *
@@ -2074,8 +2074,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Post.tags#createMany
-         * @methodOf ApiService.Post.tags
+         * @name ApiServices.Post.tags#createMany
+         * @methodOf ApiServices.Post.tags
          *
          * @description
          *
@@ -2112,8 +2112,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Post.tags#destroyAll
-         * @methodOf ApiService.Post.tags
+         * @name ApiServices.Post.tags#destroyAll
+         * @methodOf ApiServices.Post.tags
          *
          * @description
          *
@@ -2143,8 +2143,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Post.tags#destroyById
-         * @methodOf ApiService.Post.tags
+         * @name ApiServices.Post.tags#destroyById
+         * @methodOf ApiServices.Post.tags
          *
          * @description
          *
@@ -2176,8 +2176,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Post.tags#exists
-         * @methodOf ApiService.Post.tags
+         * @name ApiServices.Post.tags#exists
+         * @methodOf ApiServices.Post.tags
          *
          * @description
          *
@@ -2212,8 +2212,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Post.tags#findById
-         * @methodOf ApiService.Post.tags
+         * @name ApiServices.Post.tags#findById
+         * @methodOf ApiServices.Post.tags
          *
          * @description
          *
@@ -2248,8 +2248,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Post.tags#link
-         * @methodOf ApiService.Post.tags
+         * @name ApiServices.Post.tags#link
+         * @methodOf ApiServices.Post.tags
          *
          * @description
          *
@@ -2288,8 +2288,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Post.tags#unlink
-         * @methodOf ApiService.Post.tags
+         * @name ApiServices.Post.tags#unlink
+         * @methodOf ApiServices.Post.tags
          *
          * @description
          *
@@ -2321,8 +2321,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Post.tags#updateById
-         * @methodOf ApiService.Post.tags
+         * @name ApiServices.Post.tags#updateById
+         * @methodOf ApiServices.Post.tags
          *
          * @description
          *
@@ -2361,8 +2361,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Post#category
-         * @methodOf ApiService.Post
+         * @name ApiServices.Post#category
+         * @methodOf ApiServices.Post
          *
          * @description
          *
@@ -2400,8 +2400,8 @@ module.factory(
 
 /**
  * @ngdoc object
- * @name ApiService.Tag
- * @header ApiService.Tag
+ * @name ApiServices.Tag
+ * @header ApiServices.Tag
  * @object
  *
  * @description
@@ -2504,8 +2504,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Tag#create
-         * @methodOf ApiService.Tag
+         * @name ApiServices.Tag#create
+         * @methodOf ApiServices.Tag
          *
          * @description
          *
@@ -2542,8 +2542,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Tag#createMany
-         * @methodOf ApiService.Tag
+         * @name ApiServices.Tag#createMany
+         * @methodOf ApiServices.Tag
          *
          * @description
          *
@@ -2581,8 +2581,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Tag#upsert
-         * @methodOf ApiService.Tag
+         * @name ApiServices.Tag#upsert
+         * @methodOf ApiServices.Tag
          *
          * @description
          *
@@ -2619,8 +2619,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Tag#exists
-         * @methodOf ApiService.Tag
+         * @name ApiServices.Tag#exists
+         * @methodOf ApiServices.Tag
          *
          * @description
          *
@@ -2651,8 +2651,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Tag#findById
-         * @methodOf ApiService.Tag
+         * @name ApiServices.Tag#findById
+         * @methodOf ApiServices.Tag
          *
          * @description
          *
@@ -2686,8 +2686,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Tag#find
-         * @methodOf ApiService.Tag
+         * @name ApiServices.Tag#find
+         * @methodOf ApiServices.Tag
          *
          * @description
          *
@@ -2720,8 +2720,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Tag#findOne
-         * @methodOf ApiService.Tag
+         * @name ApiServices.Tag#findOne
+         * @methodOf ApiServices.Tag
          *
          * @description
          *
@@ -2753,8 +2753,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Tag#updateAll
-         * @methodOf ApiService.Tag
+         * @name ApiServices.Tag#updateAll
+         * @methodOf ApiServices.Tag
          *
          * @description
          *
@@ -2787,8 +2787,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Tag#deleteById
-         * @methodOf ApiService.Tag
+         * @name ApiServices.Tag#deleteById
+         * @methodOf ApiServices.Tag
          *
          * @description
          *
@@ -2820,8 +2820,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Tag#count
-         * @methodOf ApiService.Tag
+         * @name ApiServices.Tag#count
+         * @methodOf ApiServices.Tag
          *
          * @description
          *
@@ -2852,8 +2852,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Tag#prototype$updateAttributes
-         * @methodOf ApiService.Tag
+         * @name ApiServices.Tag#prototype$updateAttributes
+         * @methodOf ApiServices.Tag
          *
          * @description
          *
@@ -2889,8 +2889,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Tag#createChangeStream
-         * @methodOf ApiService.Tag
+         * @name ApiServices.Tag#createChangeStream
+         * @methodOf ApiServices.Tag
          *
          * @description
          *
@@ -3022,8 +3022,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Tag#updateOrCreate
-         * @methodOf ApiService.Tag
+         * @name ApiServices.Tag#updateOrCreate
+         * @methodOf ApiServices.Tag
          *
          * @description
          *
@@ -3057,8 +3057,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Tag#update
-         * @methodOf ApiService.Tag
+         * @name ApiServices.Tag#update
+         * @methodOf ApiServices.Tag
          *
          * @description
          *
@@ -3088,8 +3088,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Tag#destroyById
-         * @methodOf ApiService.Tag
+         * @name ApiServices.Tag#destroyById
+         * @methodOf ApiServices.Tag
          *
          * @description
          *
@@ -3118,8 +3118,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Tag#removeById
-         * @methodOf ApiService.Tag
+         * @name ApiServices.Tag#removeById
+         * @methodOf ApiServices.Tag
          *
          * @description
          *
@@ -3149,8 +3149,8 @@ module.factory(
 
     /**
     * @ngdoc property
-    * @name ApiService.Tag#modelName
-    * @propertyOf ApiService.Tag
+    * @name ApiServices.Tag#modelName
+    * @propertyOf ApiServices.Tag
     * @description
     * The name of the model represented by this $resource,
     * i.e. `Tag`.
@@ -3159,23 +3159,23 @@ module.factory(
 
     /**
      * @ngdoc object
-     * @name ApiService.Tag.posts
-     * @header ApiService.Tag.posts
+     * @name ApiServices.Tag.posts
+     * @header ApiServices.Tag.posts
      * @object
      * @description
      *
      * The object `Tag.posts` groups methods
      * manipulating `Post` instances related to `Tag`.
      *
-     * Call {@link ApiService.Tag#posts Tag.posts()}
+     * Call {@link ApiServices.Tag#posts Tag.posts()}
      * to query all related instances.
      */
 
 
         /**
          * @ngdoc method
-         * @name ApiService.Tag#posts
-         * @methodOf ApiService.Tag
+         * @name ApiServices.Tag#posts
+         * @methodOf ApiServices.Tag
          *
          * @description
          *
@@ -3210,8 +3210,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Tag.posts#count
-         * @methodOf ApiService.Tag.posts
+         * @name ApiServices.Tag.posts#count
+         * @methodOf ApiServices.Tag.posts
          *
          * @description
          *
@@ -3245,8 +3245,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Tag.posts#create
-         * @methodOf ApiService.Tag.posts
+         * @name ApiServices.Tag.posts#create
+         * @methodOf ApiServices.Tag.posts
          *
          * @description
          *
@@ -3283,8 +3283,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Tag.posts#createMany
-         * @methodOf ApiService.Tag.posts
+         * @name ApiServices.Tag.posts#createMany
+         * @methodOf ApiServices.Tag.posts
          *
          * @description
          *
@@ -3321,8 +3321,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Tag.posts#destroyAll
-         * @methodOf ApiService.Tag.posts
+         * @name ApiServices.Tag.posts#destroyAll
+         * @methodOf ApiServices.Tag.posts
          *
          * @description
          *
@@ -3352,8 +3352,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Tag.posts#destroyById
-         * @methodOf ApiService.Tag.posts
+         * @name ApiServices.Tag.posts#destroyById
+         * @methodOf ApiServices.Tag.posts
          *
          * @description
          *
@@ -3385,8 +3385,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Tag.posts#exists
-         * @methodOf ApiService.Tag.posts
+         * @name ApiServices.Tag.posts#exists
+         * @methodOf ApiServices.Tag.posts
          *
          * @description
          *
@@ -3421,8 +3421,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Tag.posts#findById
-         * @methodOf ApiService.Tag.posts
+         * @name ApiServices.Tag.posts#findById
+         * @methodOf ApiServices.Tag.posts
          *
          * @description
          *
@@ -3457,8 +3457,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Tag.posts#link
-         * @methodOf ApiService.Tag.posts
+         * @name ApiServices.Tag.posts#link
+         * @methodOf ApiServices.Tag.posts
          *
          * @description
          *
@@ -3497,8 +3497,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Tag.posts#unlink
-         * @methodOf ApiService.Tag.posts
+         * @name ApiServices.Tag.posts#unlink
+         * @methodOf ApiServices.Tag.posts
          *
          * @description
          *
@@ -3530,8 +3530,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Tag.posts#updateById
-         * @methodOf ApiService.Tag.posts
+         * @name ApiServices.Tag.posts#updateById
+         * @methodOf ApiServices.Tag.posts
          *
          * @description
          *
@@ -3573,8 +3573,8 @@ module.factory(
 
 /**
  * @ngdoc object
- * @name ApiService.PostTag
- * @header ApiService.PostTag
+ * @name ApiServices.PostTag
+ * @header ApiServices.PostTag
  * @object
  *
  * @description
@@ -3610,8 +3610,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.PostTag#create
-         * @methodOf ApiService.PostTag
+         * @name ApiServices.PostTag#create
+         * @methodOf ApiServices.PostTag
          *
          * @description
          *
@@ -3648,8 +3648,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.PostTag#createMany
-         * @methodOf ApiService.PostTag
+         * @name ApiServices.PostTag#createMany
+         * @methodOf ApiServices.PostTag
          *
          * @description
          *
@@ -3687,8 +3687,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.PostTag#upsert
-         * @methodOf ApiService.PostTag
+         * @name ApiServices.PostTag#upsert
+         * @methodOf ApiServices.PostTag
          *
          * @description
          *
@@ -3725,8 +3725,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.PostTag#exists
-         * @methodOf ApiService.PostTag
+         * @name ApiServices.PostTag#exists
+         * @methodOf ApiServices.PostTag
          *
          * @description
          *
@@ -3757,8 +3757,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.PostTag#findById
-         * @methodOf ApiService.PostTag
+         * @name ApiServices.PostTag#findById
+         * @methodOf ApiServices.PostTag
          *
          * @description
          *
@@ -3792,8 +3792,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.PostTag#find
-         * @methodOf ApiService.PostTag
+         * @name ApiServices.PostTag#find
+         * @methodOf ApiServices.PostTag
          *
          * @description
          *
@@ -3826,8 +3826,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.PostTag#findOne
-         * @methodOf ApiService.PostTag
+         * @name ApiServices.PostTag#findOne
+         * @methodOf ApiServices.PostTag
          *
          * @description
          *
@@ -3859,8 +3859,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.PostTag#updateAll
-         * @methodOf ApiService.PostTag
+         * @name ApiServices.PostTag#updateAll
+         * @methodOf ApiServices.PostTag
          *
          * @description
          *
@@ -3893,8 +3893,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.PostTag#deleteById
-         * @methodOf ApiService.PostTag
+         * @name ApiServices.PostTag#deleteById
+         * @methodOf ApiServices.PostTag
          *
          * @description
          *
@@ -3926,8 +3926,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.PostTag#count
-         * @methodOf ApiService.PostTag
+         * @name ApiServices.PostTag#count
+         * @methodOf ApiServices.PostTag
          *
          * @description
          *
@@ -3958,8 +3958,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.PostTag#prototype$updateAttributes
-         * @methodOf ApiService.PostTag
+         * @name ApiServices.PostTag#prototype$updateAttributes
+         * @methodOf ApiServices.PostTag
          *
          * @description
          *
@@ -3995,8 +3995,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.PostTag#createChangeStream
-         * @methodOf ApiService.PostTag
+         * @name ApiServices.PostTag#createChangeStream
+         * @methodOf ApiServices.PostTag
          *
          * @description
          *
@@ -4036,8 +4036,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.PostTag#updateOrCreate
-         * @methodOf ApiService.PostTag
+         * @name ApiServices.PostTag#updateOrCreate
+         * @methodOf ApiServices.PostTag
          *
          * @description
          *
@@ -4071,8 +4071,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.PostTag#update
-         * @methodOf ApiService.PostTag
+         * @name ApiServices.PostTag#update
+         * @methodOf ApiServices.PostTag
          *
          * @description
          *
@@ -4102,8 +4102,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.PostTag#destroyById
-         * @methodOf ApiService.PostTag
+         * @name ApiServices.PostTag#destroyById
+         * @methodOf ApiServices.PostTag
          *
          * @description
          *
@@ -4132,8 +4132,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.PostTag#removeById
-         * @methodOf ApiService.PostTag
+         * @name ApiServices.PostTag#removeById
+         * @methodOf ApiServices.PostTag
          *
          * @description
          *
@@ -4163,8 +4163,8 @@ module.factory(
 
     /**
     * @ngdoc property
-    * @name ApiService.PostTag#modelName
-    * @propertyOf ApiService.PostTag
+    * @name ApiServices.PostTag#modelName
+    * @propertyOf ApiServices.PostTag
     * @description
     * The name of the model represented by this $resource,
     * i.e. `PostTag`.
@@ -4174,8 +4174,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.PostTag#post
-         * @methodOf ApiService.PostTag
+         * @name ApiServices.PostTag#post
+         * @methodOf ApiServices.PostTag
          *
          * @description
          *
@@ -4210,8 +4210,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.PostTag#tag
-         * @methodOf ApiService.PostTag
+         * @name ApiServices.PostTag#tag
+         * @methodOf ApiServices.PostTag
          *
          * @description
          *
@@ -4249,8 +4249,8 @@ module.factory(
 
 /**
  * @ngdoc object
- * @name ApiService.Category
- * @header ApiService.Category
+ * @name ApiServices.Category
+ * @header ApiServices.Category
  * @object
  *
  * @description
@@ -4326,8 +4326,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Category#create
-         * @methodOf ApiService.Category
+         * @name ApiServices.Category#create
+         * @methodOf ApiServices.Category
          *
          * @description
          *
@@ -4364,8 +4364,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Category#createMany
-         * @methodOf ApiService.Category
+         * @name ApiServices.Category#createMany
+         * @methodOf ApiServices.Category
          *
          * @description
          *
@@ -4403,8 +4403,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Category#upsert
-         * @methodOf ApiService.Category
+         * @name ApiServices.Category#upsert
+         * @methodOf ApiServices.Category
          *
          * @description
          *
@@ -4441,8 +4441,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Category#exists
-         * @methodOf ApiService.Category
+         * @name ApiServices.Category#exists
+         * @methodOf ApiServices.Category
          *
          * @description
          *
@@ -4473,8 +4473,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Category#findById
-         * @methodOf ApiService.Category
+         * @name ApiServices.Category#findById
+         * @methodOf ApiServices.Category
          *
          * @description
          *
@@ -4508,8 +4508,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Category#find
-         * @methodOf ApiService.Category
+         * @name ApiServices.Category#find
+         * @methodOf ApiServices.Category
          *
          * @description
          *
@@ -4542,8 +4542,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Category#findOne
-         * @methodOf ApiService.Category
+         * @name ApiServices.Category#findOne
+         * @methodOf ApiServices.Category
          *
          * @description
          *
@@ -4575,8 +4575,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Category#updateAll
-         * @methodOf ApiService.Category
+         * @name ApiServices.Category#updateAll
+         * @methodOf ApiServices.Category
          *
          * @description
          *
@@ -4609,8 +4609,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Category#deleteById
-         * @methodOf ApiService.Category
+         * @name ApiServices.Category#deleteById
+         * @methodOf ApiServices.Category
          *
          * @description
          *
@@ -4642,8 +4642,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Category#count
-         * @methodOf ApiService.Category
+         * @name ApiServices.Category#count
+         * @methodOf ApiServices.Category
          *
          * @description
          *
@@ -4674,8 +4674,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Category#prototype$updateAttributes
-         * @methodOf ApiService.Category
+         * @name ApiServices.Category#prototype$updateAttributes
+         * @methodOf ApiServices.Category
          *
          * @description
          *
@@ -4711,8 +4711,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Category#createChangeStream
-         * @methodOf ApiService.Category
+         * @name ApiServices.Category#createChangeStream
+         * @methodOf ApiServices.Category
          *
          * @description
          *
@@ -4758,8 +4758,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Category#updateOrCreate
-         * @methodOf ApiService.Category
+         * @name ApiServices.Category#updateOrCreate
+         * @methodOf ApiServices.Category
          *
          * @description
          *
@@ -4793,8 +4793,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Category#update
-         * @methodOf ApiService.Category
+         * @name ApiServices.Category#update
+         * @methodOf ApiServices.Category
          *
          * @description
          *
@@ -4824,8 +4824,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Category#destroyById
-         * @methodOf ApiService.Category
+         * @name ApiServices.Category#destroyById
+         * @methodOf ApiServices.Category
          *
          * @description
          *
@@ -4854,8 +4854,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Category#removeById
-         * @methodOf ApiService.Category
+         * @name ApiServices.Category#removeById
+         * @methodOf ApiServices.Category
          *
          * @description
          *
@@ -4885,8 +4885,8 @@ module.factory(
 
     /**
     * @ngdoc property
-    * @name ApiService.Category#modelName
-    * @propertyOf ApiService.Category
+    * @name ApiServices.Category#modelName
+    * @propertyOf ApiServices.Category
     * @description
     * The name of the model represented by this $resource,
     * i.e. `Category`.
@@ -4895,23 +4895,23 @@ module.factory(
 
     /**
      * @ngdoc object
-     * @name ApiService.Category.posts
-     * @header ApiService.Category.posts
+     * @name ApiServices.Category.posts
+     * @header ApiServices.Category.posts
      * @object
      * @description
      *
      * The object `Category.posts` groups methods
      * manipulating `Post` instances related to `Category`.
      *
-     * Call {@link ApiService.Category#posts Category.posts()}
+     * Call {@link ApiServices.Category#posts Category.posts()}
      * to query all related instances.
      */
 
 
         /**
          * @ngdoc method
-         * @name ApiService.Category#posts
-         * @methodOf ApiService.Category
+         * @name ApiServices.Category#posts
+         * @methodOf ApiServices.Category
          *
          * @description
          *
@@ -4946,8 +4946,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Category.posts#count
-         * @methodOf ApiService.Category.posts
+         * @name ApiServices.Category.posts#count
+         * @methodOf ApiServices.Category.posts
          *
          * @description
          *
@@ -4981,8 +4981,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Category.posts#create
-         * @methodOf ApiService.Category.posts
+         * @name ApiServices.Category.posts#create
+         * @methodOf ApiServices.Category.posts
          *
          * @description
          *
@@ -5019,8 +5019,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Category.posts#createMany
-         * @methodOf ApiService.Category.posts
+         * @name ApiServices.Category.posts#createMany
+         * @methodOf ApiServices.Category.posts
          *
          * @description
          *
@@ -5057,8 +5057,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Category.posts#destroyAll
-         * @methodOf ApiService.Category.posts
+         * @name ApiServices.Category.posts#destroyAll
+         * @methodOf ApiServices.Category.posts
          *
          * @description
          *
@@ -5088,8 +5088,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Category.posts#destroyById
-         * @methodOf ApiService.Category.posts
+         * @name ApiServices.Category.posts#destroyById
+         * @methodOf ApiServices.Category.posts
          *
          * @description
          *
@@ -5121,8 +5121,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Category.posts#findById
-         * @methodOf ApiService.Category.posts
+         * @name ApiServices.Category.posts#findById
+         * @methodOf ApiServices.Category.posts
          *
          * @description
          *
@@ -5157,8 +5157,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Category.posts#updateById
-         * @methodOf ApiService.Category.posts
+         * @name ApiServices.Category.posts#updateById
+         * @methodOf ApiServices.Category.posts
          *
          * @description
          *
@@ -5200,8 +5200,8 @@ module.factory(
 
 /**
  * @ngdoc object
- * @name ApiService.Bucket
- * @header ApiService.Bucket
+ * @name ApiServices.Bucket
+ * @header ApiServices.Bucket
  * @object
  *
  * @description
@@ -5225,8 +5225,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Bucket#getContainers
-         * @methodOf ApiService.Bucket
+         * @name ApiServices.Bucket#getContainers
+         * @methodOf ApiServices.Bucket
          *
          * @description
          *
@@ -5262,8 +5262,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Bucket#createContainer
-         * @methodOf ApiService.Bucket
+         * @name ApiServices.Bucket#createContainer
+         * @methodOf ApiServices.Bucket
          *
          * @description
          *
@@ -5302,8 +5302,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Bucket#destroyContainer
-         * @methodOf ApiService.Bucket
+         * @name ApiServices.Bucket#destroyContainer
+         * @methodOf ApiServices.Bucket
          *
          * @description
          *
@@ -5336,8 +5336,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Bucket#getContainer
-         * @methodOf ApiService.Bucket
+         * @name ApiServices.Bucket#getContainer
+         * @methodOf ApiServices.Bucket
          *
          * @description
          *
@@ -5371,8 +5371,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Bucket#getFiles
-         * @methodOf ApiService.Bucket
+         * @name ApiServices.Bucket#getFiles
+         * @methodOf ApiServices.Bucket
          *
          * @description
          *
@@ -5407,8 +5407,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Bucket#getFile
-         * @methodOf ApiService.Bucket
+         * @name ApiServices.Bucket#getFile
+         * @methodOf ApiServices.Bucket
          *
          * @description
          *
@@ -5444,8 +5444,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Bucket#removeFile
-         * @methodOf ApiService.Bucket
+         * @name ApiServices.Bucket#removeFile
+         * @methodOf ApiServices.Bucket
          *
          * @description
          *
@@ -5480,8 +5480,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Bucket#upload
-         * @methodOf ApiService.Bucket
+         * @name ApiServices.Bucket#upload
+         * @methodOf ApiServices.Bucket
          *
          * @description
          *
@@ -5521,8 +5521,8 @@ module.factory(
 
         /**
          * @ngdoc method
-         * @name ApiService.Bucket#download
-         * @methodOf ApiService.Bucket
+         * @name ApiServices.Bucket#download
+         * @methodOf ApiServices.Bucket
          *
          * @description
          *
@@ -5564,8 +5564,8 @@ module.factory(
 
     /**
     * @ngdoc property
-    * @name ApiService.Bucket#modelName
-    * @propertyOf ApiService.Bucket
+    * @name ApiServices.Bucket#modelName
+    * @propertyOf ApiServices.Bucket
     * @description
     * The name of the model represented by this $resource,
     * i.e. `Bucket`.
@@ -5670,8 +5670,8 @@ module
 
   /**
    * @ngdoc object
-   * @name ApiService.LoopBackResourceProvider
-   * @header ApiService.LoopBackResourceProvider
+   * @name ApiServices.LoopBackResourceProvider
+   * @header ApiServices.LoopBackResourceProvider
    * @description
    * Use `LoopBackResourceProvider` to change the global configuration
    * settings used by all models. Note that the provider is available
@@ -5691,8 +5691,8 @@ module
   .provider('LoopBackResource', function LoopBackResourceProvider() {
     /**
      * @ngdoc method
-     * @name ApiService.LoopBackResourceProvider#setAuthHeader
-     * @methodOf ApiService.LoopBackResourceProvider
+     * @name ApiServices.LoopBackResourceProvider#setAuthHeader
+     * @methodOf ApiServices.LoopBackResourceProvider
      * @param {string} header The header name to use, e.g. `X-Access-Token`
      * @description
      * Configure the REST transport to use a different header for sending
@@ -5705,8 +5705,8 @@ module
 
     /**
      * @ngdoc method
-     * @name ApiService.LoopBackResourceProvider#setUrlBase
-     * @methodOf ApiService.LoopBackResourceProvider
+     * @name ApiServices.LoopBackResourceProvider#setUrlBase
+     * @methodOf ApiServices.LoopBackResourceProvider
      * @param {string} url The URL to use, e.g. `/api` or `//example.com/api`.
      * @description
      * Change the URL of the REST API server. By default, the URL provided
@@ -5719,8 +5719,8 @@ module
 
     /**
      * @ngdoc method
-     * @name ApiService.LoopBackResourceProvider#getUrlBase
-     * @methodOf ApiService.LoopBackResourceProvider
+     * @name ApiServices.LoopBackResourceProvider#getUrlBase
+     * @methodOf ApiServices.LoopBackResourceProvider
      * @description
      * Get the URL of the REST API server. The URL provided
      * to the code generator (`lb-ng` or `grunt-loopback-sdk-angular`) is used.
