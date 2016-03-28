@@ -4,6 +4,7 @@ module.exports =
 function($mdToast) {
 
     function notify(text, delay, actionText) {
+        if (!text && !delay && !actionText) return;
         var toast = $mdToast.simple()
             .textContent(text)
             .action(actionText)

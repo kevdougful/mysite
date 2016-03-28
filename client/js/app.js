@@ -1,6 +1,7 @@
 'use strict';
 
 var angular = require('angular');
+var ngMocks = require('angular-mocks');
 
 // Load NPM dependencies
 var ngRoute = require('angular-route');

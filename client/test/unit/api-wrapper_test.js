@@ -3,16 +3,16 @@
 describe('sample test', function() {
     
     it('should be true', function() {
-        expect(true).toBe(true);            
+        expect(true).to.be.true;            
     });
        
     
     it('should be false', function() {
-        expect(1 == 2).toBe(false);            
+        expect(1 == 2).to.be.false;            
     });
     
     it('should be one', function() {
-        expect(2).toEqual(2);            
+        expect(2).to.equal(2);            
     });
         
 });
