@@ -1,8 +1,9 @@
 language: node_js
 node_js: "4.2"
 before_install:
-#- openssl aes-256-cbc -K $encrypted_883a8dd82e78_key -iv $encrypted_883a8dd82e78_iv -in datasources.json.enc -out server\\datasources.json -d
+- openssl aes-256-cbc -K $encrypted_883a8dd82e78_key -iv $encrypted_883a8dd82e78_iv -in datasources.json.enc -out server\\datasources.json -d
 before_script:
-- "mkdir post-images"
-- "mv server/datasources.local.json server/datasoures.json"
-- "ls -l ."
+#- "mkdir post-images"
+#- "mv server/datasources.local.json server/datasoures.json"
+- "ls -l ./server"
+- "cat ./server/datasources.json"
