@@ -1,0 +1,12 @@
+{
+    "db": {
+        "name": "db",
+        "connector": "memory"
+    },
+    "s3": {
+        "name": "s3",
+        "connector": "storage",
+        "provider": "filesystem",
+        "root": "./"
+    }
+}
