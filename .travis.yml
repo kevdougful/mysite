@@ -1,6 +1,5 @@
 language: node_js
-node_js:
-- "4.2"
+node_js: "4.2"
 script:
 - node .
 before_install:
