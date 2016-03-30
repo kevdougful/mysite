@@ -1,0 +1,74 @@
+<div id="blogPage" layout="row" layout-xs="column">
+    
+    <!-- Start Blog Sidebar -->
+    <div flex-gt-xs="20" flex-xs="100" layout="column" layout-align-xs="start center" layout-align="start end">
+        <div class="blog-sidebar">
+            <div ng-repeat="i in [1, 2, 3, 4, 5, 6]">
+                {{i}}
+            </div>
+        </div>
+    </div>
+    <!-- End Blog Sidebar -->
+    
+    <!-- Start Blog Posts -->
+    <div flex-md="80" flex-gt-md="60" flex-xs="100">
+        <md-card ng-repeat="post in posts">
+            <md-card-header>
+                <md-card-avatar>
+                    <img class="md-user-avatar" ng-src="{{post.author.avatarUrl}}"/>
+                </md-card-avatar>
+                <md-card-header-text>
+                    <span class="md-title">{{post.author}}</span>
+                    <span class="md-subhead">{{post.author.title}}</span>
+                </md-card-header-text>
+            </md-card-header>
+            <img ng-show="post.imageUrl" ng-src="{{post.imageUrl}}" class="md-card-image"/>
+            <img ng-show="!post.imageUrl" src="images/placeholder.jpg"" class="md-card-image"/>
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">{{post.title}}</span>
+                    <span class="md-subhead">{{post.subtitle}}</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <p>
+                    {{post.content | limitTo: 400}}... 
+                </p>
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button class="md-icon-button" aria-label="Reply">
+                    <md-tooltip md-direction="bottom">
+                        Reply
+                    </md-tooltip>
+                    <md-icon md-svg-icon="reply"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Twitter">
+                    <md-tooltip md-direction="bottom">
+                        Share on Twitter
+                    </md-tooltip>
+                    <md-icon md-svg-icon="twitter"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Facebook">
+                    <md-tooltip md-direction="bottom">
+                        Share on Facebook
+                    </md-tooltip>
+                    <md-icon md-svg-icon="facebook-box"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Google Plus">
+                    <md-tooltip md-direction="bottom">
+                        Share on Google Plus
+                    </md-tooltip>
+                    <md-icon md-svg-icon="google-plus"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Reddit">
+                    <md-tooltip md-direction="bottom">
+                        Share on Reddit
+                    </md-tooltip>
+                    <md-icon md-svg-icon="reddit"></md-icon>
+                </md-button>
+            </md-card-actions>
+        </md-card>
+    </div>
+    <!-- Start Blog Posts -->
+    
+</div>

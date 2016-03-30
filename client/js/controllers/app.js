@@ -1,23 +1,18 @@
 'use strict';
 
-angular.module('kcoffey', [
-    'ngRoute', 'ngMaterial', 'ngMessages',
-    'kcoffey.blog'
-])
-.config(['$routeProvider', '$locationProvider',
-function($routeProvider, $locationProvider) {
-    // Default Route
-    $routeProvider.otherwise({ redirectTo: '/blog' });
-    $locationProvider.html5Mode(true);
-}])
-.controller('AppCtrl', ['$scope', 
-function($scope) {
-    $scope.today = new Date();
-    $scope.activeView = {
-
-    };
+module.exports = 
+['$scope', '$mdSidenav',
+function($scope, $mdSidenav) {
     
+    $scope.today = new Date();
+    $scope.activeView = {};
     $scope.progressActive = true;
+    $scope.openNav = function(navId) {
+        $mdSidenav(navId).toggle().then(function() {});
+    };
+    $scope.closeNav = function(navId) {
+        $mdSidenav(navId).close().then(function() {});
+    } 
     
     $scope.setProgress = function(on) {
         $scope.progressActive = on ? true : false;
@@ -34,4 +29,5 @@ function($scope) {
             }
         }
     }
-}]);
+    
+}];
