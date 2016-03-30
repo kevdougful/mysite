@@ -1,8 +1,7 @@
 language: node_js
 node_js: "4.2"
-before_install:
-- echo $DSKEY | gpg --pass-phrase-fd 0 server/datasources.json.gpg
 before_script:
+- echo $DSKEY | gpg --pass-phrase-fd 0 server/datasources.json.gpg
 - "ls -l ./server"
 - "ls -l ./"
 - "cat ./server/datasources.json"
