@@ -1,9 +1,12 @@
 language: node_js
 node_js: "4.2"
 before_install:
-- openssl aes-256-cbc -K $encrypted_883a8dd82e78_key -iv $encrypted_883a8dd82e78_iv -in datasources.json.enc -out server\\datasources.json -d
+- echo $DSKEY | gpg --pass-phrase-fd 0 server/datasources.json.gpg
 before_script:
-#- "mkdir post-images"
-#- "mv server/datasources.local.json server/datasoures.json"
 - "ls -l ./server"
+- "ls -l ./"
 - "cat ./server/datasources.json"
+- "cat ./datasources.json"
+env:
+    global:
+        secure: oxKDGiWRvaOLQyvd4iFRPgXqN0MXot7kYPlA86MPgaCLU/YbJ2U/4APLVCXg9sY8yPgV6GI+AhOvuOTDspS9QdiKUzjsJJQ+gsx3VeAZzPFRQ6sVyLixuqCbJZYLyp9JPEXi+ALHNe6CUYkQVKdALxRPGEfZ/5SW8uZ8EJ0aUVUZCFEtDN4GjTIs3NcgIK4JEDrOxV1mSeS7XvcfP5cV0cbmM04I/q0HnT09TU7VM5FbnRj1c2OWd+Fa/x0k7avpMelfiSK+M37CVIEwpyD1zRcsjwZk1TpiZRsOmkJCgJe0apZsmpyWw2kegfzZe5zG3RWHzHWD2Eh+9+ul7tZJfaxMimZ2o9DC9KqLUInKntXeRoPgyBODrwJHiEC5oNlVglqxQtOd+cgv+JdA5kfxNUsHhXkpGXV+sX5Q4fssgVBpgEPMpihnww5g0oPE3K5rWZ9WK6St9yhJs2VrRBu7KocSoCIOSRHOpVWuYQ8Lpviy9MQABW1GeqixrWTxpIDMxFyNCpnitYQzCF2Y1tC3jANAAQMHg1ZOK9IXz/RbKcwXFKWIiLDhATQWdMGmAPdYfGHoqGRDbjN6wrj+oOkjeoNy2fvKY2sG1t+gmnVVoo5LGOpzEJUetM+Y7Dgp3p3iyLj03IABgIRzOq5yifmXsUB/eCQPvNKkaeLJftXnhew=
