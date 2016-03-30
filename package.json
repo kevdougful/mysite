@@ -1,6 +1,7 @@
 {
   "name": "kcoffey-site",
   "version": "1.0.0",
+  "license": "MIT",
   "main": "server/server.js",
   "scripts": {
     "start": "node .",
