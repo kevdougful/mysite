@@ -1,18 +1,43 @@
 'use strict';
 
-describe('sample test', function() {
+describe('API Helpers Service', function() {
     
-    it('should be true', function() {
-        expect(true).to.be.true;            
+    var ApiHelpers, Post;
+    
+    beforeEach(function() {
+        module('kcoffey');
+        module('ApiServices');
     });
-       
+        
     
-    it('should be false', function() {
-        expect(1 == 2).to.be.false;            
-    });
+    beforeEach(inject(function(_ApiHelpers_, _Post_){
+        ApiHelpers = _ApiHelpers_;
+        Post = _Post_;
+    }));
     
-    it('should be one', function() {
-        expect(2).to.equal(2);            
+    describe('ApiHelpers.fetchOrCreate', function() {
+        
+        beforeEach(function() {
+            sinon.spy(ApiHelpers, 'fetchOrCreate');
+            sinon.spy(ApiHelpers, 'fetchOrCreateArray');
+            sinon.spy(Post, 'find');
+        });
+        
+        afterEach(function() {
+            ApiHelpers.fetchOrCreate.restore();
+            ApiHelpers.fetchOrCreateArray.restore();
+            Post.find.restore();
+        });
+            
+        it('should be rejected if nothing passed', function() {
+            chai.expect(ApiHelpers.fetchOrCreate()).to.be.rejected;
+        });
+        
+        it('should call <Service>.find', function() {
+            ApiHelpers.fetchOrCreate(Post, { id: 1 })
+            chai.expect(Post.find).to.have.been.called;
+        });
+            
     });
         
 });

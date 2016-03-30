@@ -23,7 +23,7 @@ describe('Dialog Service', function() {
             
         it('should call $mdToast.show', function() {
             Dialog.notify('hello');
-            chai.expect($mdToast.show).to.have.been.called;
+            expect($mdToast.show).to.have.been.called;
         });
         
         it('should not call $mdToast.show if no args', function() {

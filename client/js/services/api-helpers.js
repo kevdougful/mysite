@@ -6,25 +6,29 @@ function($q) {
       
     function fetchOrCreate(service, obj) {
         var deferred = $q.defer();
-        service.find({ filter: { where: obj } }).$promise
-            .then(function(data) {
-                if (data.length > 0) {
-                    // Object(s) found, resolve with first
-                    deferred.resolve(data[0]);
-                } else {
-                    // No objects found, create one
-                    service.create(obj).$promise
-                        .then(function(newObj) {
-                           deferred.resolve(newObj); 
-                        })
-                        .catch(function(err) {
-                            deferred.reject(err);
-                        });                        
-                }
-            })
-            .catch(function(err) {
-                deferred.reject(err);
-            });
+        if (!service || !obj) {
+            deferred.reject('Specify a service and object to create');
+        } else {
+            service.find({ filter: { where: obj } }).$promise
+                .then(function(data) {
+                    if (data.length > 0) {
+                        // Object(s) found, resolve with first
+                        deferred.resolve(data[0]);
+                    } else {
+                        // No objects found, create one
+                        service.create(obj).$promise
+                            .then(function(newObj) {
+                            deferred.resolve(newObj); 
+                            })
+                            .catch(function(err) {
+                                deferred.reject(err);
+                            });                        
+                    }
+                })
+                .catch(function(err) {
+                    deferred.reject(err);
+                });
+        }
         return deferred.promise;
     }
     
