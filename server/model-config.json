@@ -51,5 +51,9 @@
   "Bucket": {
     "dataSource": "s3",
     "public": true
+  },
+  "BlogUser": {
+    "dataSource": "db",
+    "public": true
   }
 }
