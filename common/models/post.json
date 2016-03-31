@@ -25,6 +25,9 @@
       "type": "boolean",
       "required": true,
       "default": false
+    },
+    "datePublished": {
+      "type": "date"
     }
   },
   "validations": [],
@@ -42,7 +45,7 @@
     },
     "author": {
       "type": "belongsTo",
-      "model": "User",
+      "model": "BlogUser",
       "foreignKey": "authorId"
     }
   },
