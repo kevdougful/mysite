@@ -52,23 +52,6 @@ gulp.task('create-lb-tables', function(done) {
     });
 });
 
-var karmaConfig = require('./karma-config');
-
-// Run Karma on PhantomJS
-gulp.task('test', function(done) {
-    new Server(karmaConfig.base, done).start();
-});
-
-// Run Karma with karma.conf.js
-gulp.task('test-browsers', function(done) {
-    new Server(karmaConfig.browsers, done).start();
-});
-
-// Watch for file changes and re-run tests on changes
-gulp.task('tdd', function(done) {
-    new Server(karmaConfig.tdd, done).start();
-});
-
 var watchify = require('watchify');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
