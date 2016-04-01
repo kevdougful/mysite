@@ -8,6 +8,19 @@ var install = require('gulp-install');
 var util = require('gulp-util')
 var exec = require('child_process').exec;
 var Server = require('karma').Server;
+var mocha = require('gulp-mocha');
+var env = require('gulp-env');
+
+// Set NODE_ENV to 'mock'
+gulp.task('mock-env', function() {
+    env({ vars: { NODE_ENV: 'mock' } });
+});
+
+// Run API tests
+gulp.task('test-api', ['mock-env'], function() {
+    return gulp.src('test/**/*_test.js')
+        .pipe(mocha());
+});
 
 // Install Dependencies
 gulp.task('install', function() {

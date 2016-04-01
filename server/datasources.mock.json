@@ -1,0 +1,12 @@
+{
+    "db": {
+        "name": "db",
+        "connector": "memory"
+    },
+    "s3": {
+        "name": "s3",
+        "connector": "loopback-component-storage",
+        "provider": "filesystem",
+        "root": "./"
+    }
+}
