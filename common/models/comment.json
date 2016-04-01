@@ -16,7 +16,7 @@
     },
     "upvotes": {
       "type": [
-          "string"
+        "string"
       ]
     },
     "numUpvotes": {

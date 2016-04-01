@@ -26,7 +26,7 @@
     },
     "upvotes": {
       "type": [
-          "string"
+        "string"
       ]
     },
     "numUpvotes": {
@@ -113,6 +113,13 @@
       "principalId": "admin",
       "permission": "ALLOW",
       "property": "deleteById"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "tag"
     }
   ],
   "methods": {}
