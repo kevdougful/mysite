@@ -65,11 +65,10 @@
       "property": "upvote"
     },
     {
-      "accessType": "EXECUTE",
+      "accessType": "*",
       "principalType": "ROLE",
       "principalId": "admin",
-      "permission": "ALLOW",
-      "property": "deleteById"
+      "permission": "ALLOW"
     }
   ],
   "methods": {}
