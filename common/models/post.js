@@ -1,6 +1,3 @@
-var q = require('q');
-
-
 module.exports = function(Post) {
     
     // Post must have an author
