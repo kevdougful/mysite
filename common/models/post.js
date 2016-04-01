@@ -95,6 +95,10 @@ module.exports = function(Post) {
     Post.observe('before save', function filterProperties(ctx, next) {
         // If there is a record in the context
         if (ctx.instance) {
+            var token = require('loopback').getCurrentContext().get('accessToken');
+            // Set the Author (removes authorId if it was provided)
+            var userId = require('loopback').getCurrentContext().get('accessToken').userId;
+            ctx.instance.authorId = userId;
             // Ensure a valid datePosted
             if (ctx.instance.datePosted === undefined) {
                 ctx.instance.datePosted = new Date();
@@ -102,7 +106,7 @@ module.exports = function(Post) {
             // Ensure that upvotes is an empty array
             if (ctx.instance.upvotes === undefined) {
                 ctx.instance.upvotes = [];
-            }        
+            }
         }
         next();
     });
