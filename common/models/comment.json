@@ -1,22 +1,12 @@
 {
-  "name": "Post",
-  "plural": "Posts",
+  "name": "Comment",
+  "plural": "Comments",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "title": {
-      "type": "string",
-      "required": true
-    },
-    "subtitle": {
-      "type": "string"
-    },
-    "imageUrl": {
-      "type": "string"
-    },
     "content": {
       "type": "string",
       "required": true
@@ -33,38 +23,19 @@
       "type": "number",
       "required": true,
       "default": 0
-    },
-    "published": {
-      "type": "boolean",
-      "required": true,
-      "default": false
-    },
-    "datePublished": {
-      "type": "date"
     }
   },
   "validations": [],
   "relations": {
-    "tags": {
-      "type": "hasMany",
-      "model": "Tag",
-      "foreignKey": "postId",
-      "through": "PostTag"
-    },
-    "category": {
-      "type": "belongsTo",
-      "model": "Category",
-      "foreignKey": ""
-    },
-    "author": {
+    "commentor": {
       "type": "belongsTo",
       "model": "BlogUser",
-      "foreignKey": "authorId"
+      "foreignKey": "commentorId"
     },
-    "comments": {
-      "type": "hasMany",
-      "model": "Comment",
-      "foreignKey": ""
+    "post": {
+      "type": "belongsTo",
+      "model": "Post",
+      "foreignKey": "postId"
     }
   },
   "acls": [
@@ -83,22 +54,8 @@
     {
       "accessType": "WRITE",
       "principalType": "ROLE",
-      "principalId": "author",
+      "principalId": "$authenticated",
       "permission": "ALLOW"
-    },
-    {
-      "accessType": "EXECUTE",
-      "principalType": "ROLE",
-      "principalId": "$owner",
-      "permission": "ALLOW",
-      "property": "publish"
-    },
-    {
-      "accessType": "EXECUTE",
-      "principalType": "ROLE",
-      "principalId": "$owner",
-      "permission": "ALLOW",
-      "property": "tag"
     },
     {
       "accessType": "EXECUTE",

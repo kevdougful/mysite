@@ -1,5 +1,8 @@
 module.exports = function(Post) {
     
+    // Post must have an author
+    Post.validatesPresenceOf('authorId');
+    
     // Publish: Mark a post as published
     Post.remoteMethod('publish', {
         http: { path: '/:id/publish', verb: 'put' },
