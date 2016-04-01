@@ -9,17 +9,27 @@ var util = require('gulp-util')
 var exec = require('child_process').exec;
 var Server = require('karma').Server;
 var mocha = require('gulp-mocha');
+var clean = require('gulp-clean');
 var env = require('gulp-env');
 
 // Set NODE_ENV to 'mock'
-gulp.task('mock-env', function() {
+gulp.task('test-setup', function() {
     env({ vars: { NODE_ENV: 'mock' } });
+    return gulp.src('data.json.mock')
+        .pipe(rename('data.json'))
+        .pipe(gulp.dest('./'));
 });
 
 // Run API tests
-gulp.task('test-api', ['mock-env'], function() {
+gulp.task('test-api', ['test-setup'], function() {
     return gulp.src('test/**/*_test.js')
         .pipe(mocha());
+});
+
+// Run testing tasks then cleanup the mess
+gulp.task('test', ['test-api'], function() {
+    return gulp.src('./data.json', {read: false})
+        .pipe(clean());
 });
 
 // Install Dependencies

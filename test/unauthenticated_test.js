@@ -4,14 +4,8 @@ var app = require('../server/server.js');
 var should = require('chai').should();
 var assert = require('chai').assert;
 var request = require('supertest');
-//var api = supertest('http://localhost/api');
 
 describe('Unauthenticated User', function() {
-    
-    before(function(done) {
-        require('./setup');
-        done();
-    });
     
     describe('Posts', function() {
         
@@ -24,7 +18,29 @@ describe('Unauthenticated User', function() {
                 });
         });
         
+        it('should not return unpublished Posts', function(done) {
+            request(app).get('/api/Posts?filter[where][published]=false')
+                .end(function(err, res) {
+                    assert.lengthOf(res.body, 0);
+                    done();
+                });
+        });
+            
     });
+    
+    describe('Tags', function() {
+        
+    });
+    
+    describe('Categories', function() {
+        
+    });
+    
+    describe('Comments', function() {
+        
+    });
+
+    
 
 });
     
