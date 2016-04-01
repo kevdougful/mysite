@@ -1,7 +1,7 @@
 module.exports = function(Post) {
     
-    // Post must have an author
-    Post.validatesPresenceOf('authorId');
+    Post.validatesPresenceOf('authorId');       // Post must have an author
+    Post.validatesPresenceOf('categoryId');     // Post must have belong to category
     
     // Publish: Mark a post as published
     Post.remoteMethod('publish', {
