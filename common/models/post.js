@@ -1,3 +1,5 @@
+var loopback = require('loopback');
+
 module.exports = function(Post) {
     
     Post.validatesPresenceOf('authorId');       // Post must have an author
@@ -60,10 +62,10 @@ module.exports = function(Post) {
     
     // Up Vote a post
     Post.remoteMethod('upvote', {
-        http: { path: '/:id', verb: 'post' },
+        http: { path: '/:id/upvote', verb: 'post' },
         accepts: { arg: 'id', type: 'string', required: true, http: { source: 'path' } },
         returns: { root: true, type: 'object' },
-        description: 'Increase a post\'s karma'
+        description: 'Increase upvotes for a post'
     });
     Post.beforeRemote('upvote', function(ctx, user, next) {
         Post.findById(ctx.req.params.id, function(err, post) {
@@ -91,13 +93,64 @@ module.exports = function(Post) {
         });
     };
     
+    Post.remoteMethod('myposts', {
+        http: { path: '/myposts', verb: 'get' },
+        returns: { root: true, type: [] },    
+        description: 'Returns posts belonging to the authenticated author'
+    });
+    Post.myposts = function(callback) {
+        var ctx = loopback.getCurrentContext();
+        var userId = ctx.active.accessToken.userId;
+        Post.find({ where: { authorId: userId } },
+            function(err, posts) {
+                if (err) callback(err);
+                if (!err) callback(null, posts);
+            });
+    };
+    
+    function sanitize(arr, property, value) {
+        var sanitized = [];
+        for (var i = 0; i < arr.length; i++) {
+            var element = arr[i];
+            if(element[property] !== value) {
+                sanitized.push(element);
+            }
+        }
+        return sanitized;
+    }
+    
+    Post.afterRemote('findById', function(ctx, user, next) {
+        if (ctx.result.published !== true) ctx.result = null;
+        next();
+    });
+    
+    Post.afterRemote('findOne', function(ctx, user, next) {
+        if (ctx.result.published !== true) ctx.result = null;
+        next();
+    });
+    
+    Post.afterRemote('find', function(ctx, user, next) {
+        ctx.result = sanitize(ctx.result, 'published', false);
+        next();
+    });
+    
+    Post.afterRemote('exists', function(ctx, user, next) {
+        var postId = ctx.req.params.id;
+        Post.findById(postId).then(function(post) {
+            if (!post.published) {
+                ctx.result = { exists: false };
+            }
+            next();
+        });
+    });
+    
     // Call an operation hook that runs before each record is saved
     Post.observe('before save', function filterProperties(ctx, next) {
         // If there is a record in the context
         if (ctx.instance) {
-            var token = require('loopback').getCurrentContext().get('accessToken');
+            var token = loopback.getCurrentContext().get('accessToken');
             // Set the Author (removes authorId if it was provided)
-            var userId = require('loopback').getCurrentContext().get('accessToken').userId;
+            var userId = loopback.getCurrentContext().get('accessToken').userId;
             ctx.instance.authorId = userId;
             // Ensure a valid datePosted
             if (ctx.instance.datePosted === undefined) {
@@ -110,4 +163,5 @@ module.exports = function(Post) {
         }
         next();
     });
+    
 };
