@@ -5,7 +5,7 @@
   "main": "server/server.js",
   "scripts": {
     "start": "node .",
-    "test": "./node_modules/.bin/karma start karma.conf.js --log-level debug --single-run"
+    "test": "./node_modules/.bin/gulp test"
   },
   "dependencies": {
     "angular": "^1.5.2",

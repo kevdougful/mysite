@@ -52,15 +52,14 @@ describe('Unauthenticated User -', function() {
                 });
         });
         
-        it('should not be able to use myposts endpoint', function() {
-            request(app).put('/api/Posts/myposts')
+        it('should not be able to use myposts endpoint', function(done) {
+            request(app).get('/api/Posts/myposts')
                 .end(function(err, res) {
                     res.status.should.equal(401)
                     done();
                 });
         });
             
-        
         it('should be able to get count of comments', function(done) {
             request(app).get('/api/Posts/1/comments/count')
                 .end(function(err, res) {

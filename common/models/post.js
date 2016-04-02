@@ -95,11 +95,12 @@ module.exports = function(Post) {
     
     Post.remoteMethod('myposts', {
         http: { path: '/myposts', verb: 'get' },
-        returns: { root: true, type: [] },    
+        returns: { root: true },    
         description: 'Returns posts belonging to the authenticated author'
     });
     Post.myposts = function(callback) {
         var ctx = loopback.getCurrentContext();
+        if (!ctx.active.accessToken) return callback(null, []);
         var userId = ctx.active.accessToken.userId;
         Post.find({ where: { authorId: userId } },
             function(err, posts) {

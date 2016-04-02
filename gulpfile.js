@@ -26,8 +26,17 @@ gulp.task('test-api', ['test-setup'], function() {
         .pipe(mocha());
 });
 
+// Run front-end tests
+gulp.task('test-ui', function (done) {
+    new Server({
+        configFile: __dirname + '/karma.conf.js',
+        singleRun: true,
+        logLevel: 'debug'
+    }, done).start();
+});
+
 // Run testing tasks then cleanup the mess
-gulp.task('test', ['test-api'], function() {
+gulp.task('test', ['test-api', 'test-ui'], function() {
     return gulp.src('./data.json', {read: false})
         .pipe(clean());
 });
