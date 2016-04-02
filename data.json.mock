@@ -5,9 +5,9 @@
     "ACL": 1,
     "RoleMapping": 3,
     "Role": 3,
-    "Post": 5,
+    "Post": 9,
     "Tag": 4,
-    "PostTag": 7,
+    "PostTag": 13,
     "Category": 3,
     "BlogUser": 4,
     "Comment": 7
@@ -28,7 +28,11 @@
       "1": "{\"title\":\"Post 1\",\"subtitle\":\"Post 1 subtitle\",\"imageUrl\":\"api/post-images/123.jpg\",\"content\":\"Post 1 content\",\"datePosted\":\"2016-04-01T20:23:11.944Z\",\"upvotes\":[],\"numUpvotes\":0,\"published\":false,\"categoryId\":1,\"authorId\":1,\"id\":1}",
       "2": "{\"title\":\"Post 2\",\"subtitle\":\"Post 2 subtitle\",\"imageUrl\":\"api/post-images/123.jpg\",\"content\":\"Post 2 content\",\"datePosted\":\"2016-04-01T20:23:38.299Z\",\"upvotes\":[],\"numUpvotes\":0,\"published\":false,\"categoryId\":2,\"authorId\":1,\"id\":2}",
       "3": "{\"title\":\"Post 3\",\"subtitle\":\"Post 3 subtitle\",\"imageUrl\":\"api/post-images/456.jpg\",\"content\":\"Post 3 content\",\"datePosted\":\"2016-04-01T20:24:19.817Z\",\"upvotes\":[],\"numUpvotes\":0,\"published\":false,\"categoryId\":1,\"authorId\":2,\"id\":3}",
-      "4": "{\"title\":\"Post 4\",\"subtitle\":\"Post 4 subtitle\",\"imageUrl\":\"api/post-images/456.jpg\",\"content\":\"Post 4 content\",\"datePosted\":\"2016-04-01T20:24:33.188Z\",\"upvotes\":[],\"numUpvotes\":0,\"published\":false,\"categoryId\":2,\"authorId\":2,\"id\":4}"
+      "4": "{\"title\":\"Post 4\",\"subtitle\":\"Post 4 subtitle\",\"imageUrl\":\"api/post-images/456.jpg\",\"content\":\"Post 4 content\",\"datePosted\":\"2016-04-01T20:24:33.188Z\",\"upvotes\":[],\"numUpvotes\":0,\"published\":false,\"categoryId\":2,\"authorId\":2,\"id\":4}",
+      "5": "{\"title\":\"Post 5\",\"subtitle\":\"Post 5 subtitle\",\"imageUrl\":\"api/post-images/123.jpg\",\"content\":\"Post 1 content\",\"datePosted\":\"2016-04-01T20:23:11.944Z\",\"upvotes\":[],\"numUpvotes\":0,\"published\":true,\"categoryId\":1,\"authorId\":1,\"id\":5}",
+      "6": "{\"title\":\"Post 6\",\"subtitle\":\"Post 6 subtitle\",\"imageUrl\":\"api/post-images/123.jpg\",\"content\":\"Post 1 content\",\"datePosted\":\"2016-04-01T20:23:11.944Z\",\"upvotes\":[],\"numUpvotes\":0,\"published\":true,\"categoryId\":2,\"authorId\":1,\"id\":6}",
+      "7": "{\"title\":\"Post 7\",\"subtitle\":\"Post 7 subtitle\",\"imageUrl\":\"api/post-images/123.jpg\",\"content\":\"Post 1 content\",\"datePosted\":\"2016-04-01T20:23:11.944Z\",\"upvotes\":[],\"numUpvotes\":0,\"published\":true,\"categoryId\":1,\"authorId\":2,\"id\":7}",
+      "8": "{\"title\":\"Post 8\",\"subtitle\":\"Post 8 subtitle\",\"imageUrl\":\"api/post-images/123.jpg\",\"content\":\"Post 1 content\",\"datePosted\":\"2016-04-01T20:23:11.944Z\",\"upvotes\":[],\"numUpvotes\":0,\"published\":true,\"categoryId\":2,\"authorId\":2,\"id\":8}"      
     },
     "Tag": {
       "1": "{\"id\":1,\"name\":\"Tag 1\"}",
@@ -41,7 +45,13 @@
       "3": "{\"postId\":1,\"tagId\":3,\"id\":3}",
       "4": "{\"postId\":3,\"tagId\":1,\"id\":4}",
       "5": "{\"postId\":3,\"tagId\":2,\"id\":5}",
-      "6": "{\"postId\":3,\"tagId\":3,\"id\":6}"
+      "6": "{\"postId\":3,\"tagId\":3,\"id\":6}",
+      "7": "{\"postId\":5,\"tagId\":1,\"id\":1}",
+      "8": "{\"postId\":5,\"tagId\":2,\"id\":2}",
+      "9": "{\"postId\":5,\"tagId\":3,\"id\":3}",
+      "10": "{\"postId\":7,\"tagId\":1,\"id\":4}",
+      "11": "{\"postId\":7,\"tagId\":2,\"id\":5}",
+      "12": "{\"postId\":7,\"tagId\":3,\"id\":6}"
     },
     "Category": {
       "1": "{\"name\":\"Category 1\",\"description\":\"Category 1 description\",\"id\":1}",
