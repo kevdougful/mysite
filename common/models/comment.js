@@ -1,4 +1,10 @@
+var loopback = require('loopback');
+var shortid = require('shortid');
+
 module.exports = function(Comment) {
+    
+    Comment.validatesPresenceOf('postId');      // Comment must have post
+    Comment.validatesPresenceOf('commentorId'); // Comment must have commentor
     
     // Up Vote a comment
     Comment.remoteMethod('upvote', {
@@ -37,6 +43,10 @@ module.exports = function(Comment) {
     Comment.observe('before save', function filterProperties(ctx, next) {
         // If there is a record in the context
         if (ctx.instance) {
+            var token = loopback.getCurrentContext().get('accessToken');
+            // Set the commentor (removes commentorId if it was provided)
+            var userId = loopback.getCurrentContext().get('accessToken').userId;
+            ctx.instance.commentorId = userId;
             // Ensure a valid datePosted
             if (ctx.instance.datePosted === undefined) {
                 ctx.instance.datePosted = new Date();
@@ -44,7 +54,10 @@ module.exports = function(Comment) {
             // Ensure that upvotes is an empty array
             if (ctx.instance.upvotes === undefined) {
                 ctx.instance.upvotes = [];
-            }        
+            }
+            if (ctx.isNewInstance) {
+                ctx.instance.id = shortid.generate();
+            }  
         }
         next();
     });

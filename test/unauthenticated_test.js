@@ -74,7 +74,7 @@ describe('Unauthenticated User -', function() {
         });
         
         it('should return 404 if unpublished Post queried by id', function(done) {
-            request(app).get('/api/Posts/1')
+            request(app).get('/api/Posts/NkgE7DKRe')
                 .end(function(err, res) {
                     res.status.should.equal(404);
                     done();
@@ -82,7 +82,7 @@ describe('Unauthenticated User -', function() {
         });
         
         it('Posts/:id/exists should return false if post unpublished', function(done) {
-            request(app).get('/api/Posts/1/exists')
+            request(app).get('/api/Posts/NkgE7DKRe/exists')
                 .end(function(err, res) {
                     res.body.should.have.property('exists', false);
                     done();
@@ -90,7 +90,7 @@ describe('Unauthenticated User -', function() {
         });
         
         it('should not allow unauthenticated user to publish post', function(done) {
-            request(app).put('/api/Posts/1/publish')
+            request(app).put('/api/Posts/NkgE7DKRe/publish')
                 .end(function(err, res) {
                     res.status.should.equal(401)
                     done();
@@ -106,7 +106,7 @@ describe('Unauthenticated User -', function() {
         });
             
         it('should be able to get count of comments', function(done) {
-            request(app).get('/api/Posts/1/comments/count')
+            request(app).get('/api/Posts/4ktrQvFCl/comments/count')
                 .end(function(err, res) {
                     res.status.should.equal(200);
                     assert.property(res.body, 'count');

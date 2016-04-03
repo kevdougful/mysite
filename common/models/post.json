@@ -7,6 +7,10 @@
     "validateUpsert": true
   },
   "properties": {
+    "id": {
+      "type": "string",
+      "id": true
+    },
     "title": {
       "type": "string",
       "required": true
@@ -140,6 +144,13 @@
       "principalId": "admin",
       "permission": "ALLOW",
       "property": "myposts"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "comments"
     }
   ],
   "methods": {}

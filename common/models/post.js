@@ -1,4 +1,5 @@
 var loopback = require('loopback');
+var shortid = require('shortid');
 
 module.exports = function(Post) {
     
@@ -160,6 +161,9 @@ module.exports = function(Post) {
             // Ensure that upvotes is an empty array
             if (ctx.instance.upvotes === undefined) {
                 ctx.instance.upvotes = [];
+            }
+            if (ctx.isNewInstance) {
+                ctx.instance.id = shortid.generate();
             }
         }
         next();
