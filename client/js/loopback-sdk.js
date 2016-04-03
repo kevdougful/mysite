@@ -1797,7 +1797,7 @@ module.factory(
          *
          * @description
          *
-         * Increase a post's karma
+         * Increase upvotes for a post
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -1823,8 +1823,42 @@ module.factory(
          * </em>
          */
         "upvote": {
-          url: urlBase + "/Posts/:id",
+          url: urlBase + "/Posts/:id/upvote",
           method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name ApiServices.Post#myposts
+         * @methodOf ApiServices.Post
+         *
+         * @description
+         *
+         * Returns posts belonging to the authenticated author
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Post` object.)
+         * </em>
+         */
+        "myposts": {
+          url: urlBase + "/Posts/myposts",
+          method: "GET"
         },
 
         // INTERNAL. Use Tag.posts.findById() instead.
