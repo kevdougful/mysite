@@ -52,12 +52,33 @@ function(
         templateUrl: 'views/editor.html',
         controller: 'EditorCtrl'
     });
+    $routeProvider.when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl'
+    });
     $routeProvider.otherwise({ redirectTo: '/blog' });
     $locationProvider.html5Mode(true);
     
     // Loopback AngularJS SDK
     LoopBackResourceProvider.setAuthHeader('X-Access-Token');
     LoopBackResourceProvider.setUrlBase(API.URL);
+    
+    // Looback AngularJS SDK Auth
+    $httpProvider.interceptors.push(
+        ['$q', '$location', 'LoopBackAuth', 
+        function($q, $location, LoopBackAuth) {
+            return {
+                responseError: function(rejection) {
+                    if (rejection.status == 401) {
+                        LoopBackAuth.clearUser();
+                        LoopBackAuth.clearStorage();
+                        $location.nextAfterLogin = $location.path();
+                        $location.path('/login');
+                    }
+                    return $q.reject(rejection);
+                }
+            };
+    }]);
     
     // CORS
     $httpProvider.defaults.useXDomain = true;

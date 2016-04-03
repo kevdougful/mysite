@@ -9,4 +9,7 @@ module.exports = function(server) {
     server.get('/editor', function(req, res) {
         res.sendFile(path.join(__dirname, '../../client/index.html'));
     });
+    server.get('/login', function(req, res) {
+        res.sendFile(path.join(__dirname, '../../client/index.html'));
+    });
 };

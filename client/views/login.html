@@ -1,0 +1,19 @@
+<form name="loginForm" ng-submit="login(credentials)">
+    <div layout="row" layout-align="center center">
+        <div layout="column">
+            <md-input-container>
+                <label>Username</label>
+                <input type="text" name="username" ng-model="credentials.username">
+            </md-input-container>
+            <md-input-container>
+                <label>Password</label>
+                <input type="password" name="password" ng-model="credentials.password">
+            </md-input-container>
+            <md-switch ng-model="rememberMe" aria-label="Remember Me">
+                Remember Me
+            </md-switch>
+            <md-button class="md-raised md-primary" aria-label="Login" type="submit"> Login </md-button>
+            <md-button class="md-raised md-primary" aria-label="Register" type="button"> Register </md-button>
+        </div>
+    </div>
+</form>

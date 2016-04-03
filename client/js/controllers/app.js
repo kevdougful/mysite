@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = 
-['$scope', '$mdSidenav',
-function($scope, $mdSidenav) {
+['$scope', '$mdSidenav', '$mdOpenMenu', 'Session', 'BlogUser', 'Dialog',
+function($scope, $mdSidenav, $mdOpenMenu, Session, BlogUser, Dialog) {
     
     $scope.today = new Date();
     $scope.activeView = {};
@@ -30,4 +30,32 @@ function($scope, $mdSidenav) {
         }
     }
     
+    $scope.openAccountMenu = function($mdOpenMenu, e) {
+        $mdOpenMenu(e);
+    };
+    
+    $scope.currentUser = null;
+    if (BlogUser.isAuthenticated()) {
+        BlogUser.getCurrent().$promise
+            .then(function(user) {
+                $scope.currentUser = user;
+            });
+    }
+    
+    $scope.setCurrentUser = function(user) {
+        Session.create(user);
+        $scope.currentUser = user;
+    };
+    
+    $scope.logout = function() {
+        BlogUser.logout().$promise
+            .then(function() {
+                Session.destroy();
+                $scope.currentUser = null;
+            })
+            .catch(function(err) {
+                Dialog.notify('Error logging out', 3000);
+            });
+    };
+
 }];
