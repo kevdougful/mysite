@@ -29,10 +29,11 @@
       "permission": "ALLOW"
     },
     {
-      "accessType": "WRITE",
+      "accessType": "EXECUTE",
       "principalType": "ROLE",
       "principalId": "author",
-      "permission": "ALLOW"
+      "permission": "ALLOW",
+      "property": "upload"
     }
   ],
   "methods": {}
