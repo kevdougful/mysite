@@ -18,6 +18,7 @@ coverage
 node_modules
 npm-debug.log
 datasources.json
+datasources.production.json
 db.local.json
 
 build.js

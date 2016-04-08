@@ -98,7 +98,7 @@ var browserifyOptions = {
 var options = _.assign({}, watchify.args, browserifyOptions);
 var b = watchify(browserify(options));
 
-gulp.task('build', bundle);
+gulp.task('build-watch', bundle);
 b.on('update', bundle);
 b.on('log', util.log);
 
@@ -112,3 +112,19 @@ function bundle() {
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('./client'));
 }
+
+gulp.task('build', function() {
+    var bify = browserify({
+        entries: ['./client/js/app.js'],
+        debug: true
+    });
+    
+    return bify.bundle()
+        .pipe(source('build.js'))
+        .pipe(buffer())
+        .pipe(sourcemaps.init({loadMaps: true}))
+        .pipe(uglify())
+        .on('error', util.log)
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest('./client'));
+});
