@@ -1,26 +1,45 @@
 {
-  "name": "Category",
-  "plural": "Categories",
+  "name": "Comment",
+  "plural": "Comments",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "name": {
+    "id": {
+      "type": "string",
+      "id": true
+    },
+    "content": {
       "type": "string",
       "required": true
     },
-    "description": {
-      "type": "string"
+    "datePosted": {
+      "type": "date"
+    },
+    "upvotes": {
+      "type": [
+        "string"
+      ]
+    },
+    "numUpvotes": {
+      "type": "number",
+      "required": true,
+      "default": 0
     }
   },
   "validations": [],
   "relations": {
-    "posts": {
-      "type": "hasMany",
+    "commentor": {
+      "type": "belongsTo",
+      "model": "BlogUser",
+      "foreignKey": "commentorId"
+    },
+    "post": {
+      "type": "belongsTo",
       "model": "Post",
-      "foreignKey": "categoryId"
+      "foreignKey": "postId"
     }
   },
   "acls": [
@@ -39,8 +58,15 @@
     {
       "accessType": "WRITE",
       "principalType": "ROLE",
-      "principalId": "author",
+      "principalId": "$authenticated",
       "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "upvote"
     },
     {
       "accessType": "*",

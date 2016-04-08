@@ -8,6 +8,38 @@ var install = require('gulp-install');
 var util = require('gulp-util')
 var exec = require('child_process').exec;
 var Server = require('karma').Server;
+var mocha = require('gulp-mocha');
+var clean = require('gulp-clean');
+var env = require('gulp-env');
+
+// Set NODE_ENV to 'mock'
+gulp.task('test-setup', function() {
+    env({ vars: { NODE_ENV: 'mock' } });
+    return gulp.src('data.json.mock')
+        .pipe(rename('data.json'))
+        .pipe(gulp.dest('./'));
+});
+
+// Run API tests
+gulp.task('test-api', ['test-setup'], function() {
+    return gulp.src('test/**/*_test.js')
+        .pipe(mocha());
+});
+
+// Run front-end tests
+gulp.task('test-ui', function (done) {
+    new Server({
+        configFile: __dirname + '/karma.conf.js',
+        singleRun: true,
+        logLevel: 'debug'
+    }, done).start();
+});
+
+// Run testing tasks then cleanup the mess
+gulp.task('test', ['test-api', 'test-ui'], function() {
+    return gulp.src('./data.json', {read: false})
+        .pipe(clean());
+});
 
 // Install Dependencies
 gulp.task('install', function() {
@@ -50,23 +82,6 @@ gulp.task('create-lb-tables', function(done) {
     function(err, stdout, stderr) {
         done(err);
     });
-});
-
-var karmaConfig = require('./karma-config');
-
-// Run Karma on PhantomJS
-gulp.task('test', function(done) {
-    new Server(karmaConfig.base, done).start();
-});
-
-// Run Karma with karma.conf.js
-gulp.task('test-browsers', function(done) {
-    new Server(karmaConfig.browsers, done).start();
-});
-
-// Watch for file changes and re-run tests on changes
-gulp.task('tdd', function(done) {
-    new Server(karmaConfig.tdd, done).start();
 });
 
 var watchify = require('watchify');

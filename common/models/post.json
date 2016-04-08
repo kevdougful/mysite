@@ -7,6 +7,10 @@
     "validateUpsert": true
   },
   "properties": {
+    "id": {
+      "type": "string",
+      "id": true
+    },
     "title": {
       "type": "string",
       "required": true
@@ -20,6 +24,27 @@
     "content": {
       "type": "string",
       "required": true
+    },
+    "datePosted": {
+      "type": "date"
+    },
+    "upvotes": {
+      "type": [
+        "string"
+      ]
+    },
+    "numUpvotes": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "published": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "datePublished": {
+      "type": "date"
     }
   },
   "validations": [],
@@ -34,8 +59,99 @@
       "type": "belongsTo",
       "model": "Category",
       "foreignKey": ""
+    },
+    "author": {
+      "type": "belongsTo",
+      "model": "BlogUser",
+      "foreignKey": "authorId"
+    },
+    "comments": {
+      "type": "hasMany",
+      "model": "Comment",
+      "foreignKey": ""
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "author",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "publish"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "tag"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "upvote"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "tag"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY",
+      "property": "myposts"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "author",
+      "permission": "ALLOW",
+      "property": "myposts"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "myposts"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "comments"
+    }
+  ],
   "methods": {}
 }
