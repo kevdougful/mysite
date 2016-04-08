@@ -15,5 +15,5 @@ deploy:
   application: kcoffey-blog-app
   deployment_group: kcoffey-blog-app-deploy-role
   on:
-    tags: true
+    branch: master
     repo: kevdougful/mysite
