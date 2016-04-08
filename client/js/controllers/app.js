@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = 
-['$scope', '$mdSidenav', '$mdOpenMenu', 'Session', 'BlogUser', 'Dialog',
-function($scope, $mdSidenav, $mdOpenMenu, Session, BlogUser, Dialog) {
+['$scope', '$mdSidenav', 'Session', 'BlogUser', 'Dialog',
+function($scope, $mdSidenav, Session, BlogUser, Dialog) {
     
     $scope.today = new Date();
     $scope.activeView = {};
